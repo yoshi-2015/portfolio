@@ -1,0 +1,236 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+header h1 {
+  text-align: center;
+}
+
+body h1 {
+  text-align: center;
+}
+
+/*　ハンバーガーメニュー　レイアウト　ここから　*/
+#hm-icon{
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  z-index: 11;
+}
+
+.menu-trigger,
+.menu-trigger span {
+  display: inline-block;
+  transition: all .4s;
+  box-sizing: border-box;
+}
+
+.menu-trigger {
+  position: relative;
+  width: 50px;
+  height: 44px;
+}
+
+.menu-trigger span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #000;
+  border-radius: 4px;
+}
+
+.menu-trigger span:nth-of-type(1) {
+  top: 0;
+}
+
+.menu-trigger span:nth-of-type(2) {
+  top: 20px;
+}
+
+.menu-trigger span:nth-of-type(3) {
+  bottom: 0;
+}
+/*　ハンバーガーメニュー　レイアウト　ここまで　*/
+
+/*　ハンバーガーメニュー　アクション　ここから　*/
+.menu-trigger span:nth-of-type(1) {
+  -webkit-animation: menu-bar01 .75s forwards;
+  animation: menu-bar01 .75s forwards;
+}
+
+@-webkit-keyframes menu-bar01 {
+  0% {
+    -webkit-transform: translateY(20px) rotate(45deg);
+  }
+  50% {
+    -webkit-transform: translateY(20px) rotate(0);
+  }
+  100% {
+    -webkit-transform: translateY(0) rotate(0);
+  }
+}
+
+@keyframes menu-bar01 {
+  0% {
+    transform: translateY(20px) rotate(45deg);
+  }
+  50% {
+    transform: translateY(20px) rotate(0);
+  }
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+}
+
+.menu-trigger span:nth-of-type(2) {
+  transition: all .25s .25s;
+  opacity: 1;
+}
+
+.menu-trigger span:nth-of-type(3) {
+  -webkit-animation: menu-bar02 .75s forwards;
+  animation: menu-bar02 .75s forwards;
+  }
+  @-webkit-keyframes menu-bar02 {
+  0% {
+    -webkit-transform: translateY(-20px) rotate(-45deg);
+  }
+  50% {
+    -webkit-transform: translateY(-20px) rotate(0);
+  }
+  100% {
+    -webkit-transform: translateY(0) rotate(0);
+  }
+}
+
+@keyframes menu-bar02 {
+  0% {
+    transform: translateY(-20px) rotate(-45deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(0);
+  }
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+}
+
+.menu-trigger.active span:nth-of-type(1) {
+  -webkit-animation: active-menu-bar01 .75s forwards;
+  animation: active-menu-bar01 .75s forwards;
+  }
+  @-webkit-keyframes active-menu-bar01 {
+  0% {
+    -webkit-transform: translateY(0) rotate(0);
+  }
+  50% {
+    -webkit-transform: translateY(20px) rotate(0);
+  }
+  100% {
+    -webkit-transform: translateY(20px) rotate(45deg);
+  }
+}
+
+@keyframes active-menu-bar01 {
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(20px) rotate(0);
+  }
+  100% {
+    transform: translateY(20px) rotate(45deg);
+  }
+}
+
+.menu-trigger.active span:nth-of-type(2) {
+  opacity: 0;
+}
+
+.menu-trigger.active span:nth-of-type(3) {
+  -webkit-animation: active-menu-bar03 .75s forwards;
+  animation: active-menu-bar03 .75s forwards;
+}
+
+@-webkit-keyframes active-menu-bar03 {
+  0% {
+    -webkit-transform: translateY(0) rotate(0);
+  }
+  50% {
+    -webkit-transform: translateY(-20px) rotate(0);
+  }
+  100% {
+    -webkit-transform: translateY(-20px) rotate(-45deg);
+  }
+}
+
+@keyframes active-menu-bar03 {
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(-20px) rotate(0);
+  }
+  100% {
+    transform: translateY(-20px) rotate(-45deg);
+  }
+}
+/*　ハンバーガーメニュー　アクション　ここまで　*/
+
+/* ハンバーガーメニュー内一覧　ここから */
+#sp-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(255,153,51,0.75);
+  color: #fff;
+  width: 100%;
+  display: none;
+  z-index: 11;
+}
+
+#sp-menu li{
+  text-align: center;
+  margin: 30px 0;
+  list-style: none;
+}
+
+#sp-menu a{
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+/* ハンバーガーメニュー内一覧　ここまで */
+
+/*　トップに戻るボタン　ここから　*/
+#back {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+}
+
+#back img {
+  width: 50px;
+}
+/*　トップに戻るボタン　ここまで　*/
+
+/*　footer　レイアウト　ここから　*/
+footer {
+  text-align: center;
+}
+/*　footer　レイアウト　ここまで　*/

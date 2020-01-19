@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Portfolio</title>
+    <title>Cinematic Records</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,101 @@
   </head>
 
   <body>
+    <div id="sp-menu">
+      <h1>Cinematic Records</h1>
+      <ul style="padding: 0;">
+        <!-- ログインしていたら　ここから -->
+        <!-- 遷移先をusers_pathに固定中 -->
+        <% if user_signed_in? %>
+          <li class="">
+            <%= link_to users_path do %>
+              <span class="glyphicon glyphicon-th" aria-hidden="true"></span> TOP
+            <% end %>
+          </li>
+            <li class="">
+              <%= link_to users_path do %>
+                <span class="glyphicon glyphicon-home" aria-hidden="true"></span> マイページ
+              <% end %>
+          </li>
+            <li class="">
+              <%= link_to users_path do %>
+                <span class="glyphicon glyphicon-user" aria-hidden="true"></span> ユーザー
+              <% end %>
+          </li>
+          <li class="">
+            <%= link_to users_path do %>
+              <span class="glyphicon glyphicon-book" aria-hidden="true"></span> --
+            <% end %>
+          </li>
+          <li class="">
+            <%= link_to destroy_user_session_path, method: :delete do %>
+              <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> ログアウト
+            <% end %>
+          </li>
+          <li>
+            ここに検索ふぉーむ
+          </li>
+        <!-- ログインしていたら　ここまで -->
+        <!-- ログインしていなかったら　ここから -->
+        <!-- 遷移先をnew_user_session_pathに固定中 -->
+        <% else %>
+          <li class="">
+            <%= link_to new_user_session_path do %>
+              <span class="glyphicon glyphicon-th" aria-hidden="true"></span> TOP
+            <% end %>
+          </li>
+          <li class="">
+            <%= link_to new_user_session_path do %>
+              <span class="glyphicon glyphicon-link" aria-hidden="true"></span> サイト紹介
+            <% end %>
+          </li>
+          <li class="">
+            <%= link_to new_user_registration_path do %>
+              <span class="glyphicon glyphicon-check" aria-hidden="true"></span> 新規登録
+            <% end %>
+          </li>
+          <li class="">
+            <%= link_to new_user_session_path do %>
+              <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>  ログイン
+            <% end %>
+          </li>
+        <% end %>
+        <!-- ログインしていなかったら　ここまで -->
+      </ul>
+    </div>
+
+    <!-- ハンバーガーメニュー ここから　-->
+    <div id="hm-icon">
+    <a class="menu-trigger" href="#">
+      <span></span>
+      <span></span>
+      <span></span>
+    </a>
+    </div>
+    <!-- ハンバーガーメニュー ここまで　-->
+
+    <header>
+      <div>
+        <h1>Cinematic Records</h1>
+      </div>
+    </header>
+
     <%= yield %>
+
+    <span id="back">
+      <a href="#">
+        <%= image_tag "arrow.png" %>
+      </a>
+    </span>
+
+    <footer>
+      <div class="row">
+        <p>映画をもっと、楽しく。</p>
+      </div>
+      <div>
+        <p>© Cinematic Records INC. ALL RIGHTS RESERVED.(仮)</p>
+      </div>
+
+    </footer>
   </body>
 </html>
