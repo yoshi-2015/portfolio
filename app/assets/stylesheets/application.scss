@@ -1,4 +1,4 @@
-/*
+ /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
@@ -13,21 +13,32 @@
  *= require_tree .
  *= require_self
  */
- @import "bootstrap-sprockets";
- @import "bootstrap";
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
-header h1 {
-  text-align: center;
+body {
+  /*背景レイアウト*/
+
+  /*background-color: #000;*/
+  background-image: url(/assets/film.png);
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  background-attachment: fixed;
 }
 
-body h1 {
+.top {
+  margin-top: 30px;
+}
+
+.text-center {
   text-align: center;
 }
 
 /*　ハンバーガーメニュー　レイアウト　ここから　*/
 #hm-icon{
   position: fixed;
-  right: 20px;
+  right: 200px;
   top: 20px;
   z-index: 11;
 }
@@ -50,8 +61,10 @@ body h1 {
   left: 0;
   width: 100%;
   height: 4px;
-  background-color: #000;
   border-radius: 4px;
+  /*背景レイアウト変えたら変更*/
+  background-color: #fff;
+  /*background-color: #000;*/
 }
 
 .menu-trigger span:nth-of-type(1) {
@@ -217,10 +230,27 @@ body h1 {
 }
 /* ハンバーガーメニュー内一覧　ここまで */
 
+/*ボタン　レイアウト　ここから*/
+.anime {
+  width: 150px;
+  text-align:  center;
+  font-size:  15px;
+  text-decoration: none;
+  color:  #000;
+  background-color: #3399FF;
+  border-radius:  5px;
+  transition: 0.5s;
+}
+
+.anime:hover {
+  opacity:  0.7;
+}
+/*　ボタン　レイアウト　ここまで　*/
+
 /*　トップに戻るボタン　ここから　*/
 #back {
   position: fixed;
-  right: 20px;
+  right: 200px;
   bottom: 20px;
 }
 
@@ -231,6 +261,50 @@ body h1 {
 
 /*　footer　レイアウト　ここから　*/
 footer {
+  margin: 100px auto;
   text-align: center;
 }
-/*　footer　レイアウト　ここまで　*/
+/*　footer　レイアウト　ここまで */
+
+.input-color {
+  color: #000;
+}
+
+
+/*　レスポンシブ対応　*/
+
+@media screen and (max-width:850px) {
+  #hm-icon{
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  z-index: 11;
+  }
+
+  .menu-trigger span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #3366FF;
+  border-radius: 4px;
+  }
+
+  #back {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  }
+
+  #back img {
+  width: 50px;
+  }
+}
+
+
+
+
+
+
+
+
