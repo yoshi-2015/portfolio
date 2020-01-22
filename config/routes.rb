@@ -8,4 +8,7 @@ Rails.application.routes.draw do
     get :followers, on: :member
     resource :favorites, only: [:index]
   end
+
+  get 'movies/search'
+  get 'movies/show'
 end

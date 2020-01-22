@@ -13,9 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+/*bootstrapインポート*/
 @import "bootstrap-sprockets";
 @import "bootstrap";
+/*フォントインポート*/
+@import url('https://fonts.googleapis.com/css?family=Sacramento');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono');
 
+/*　共通レイアウト　ここから　*/
 body {
   /*背景レイアウト*/
   /*background-image: url(/assets/film.jpg);
@@ -23,6 +29,11 @@ body {
   background-size: cover;
   color: #fff;
   background-attachment: fixed;*/
+  font-family: 'Ubuntu Mono', monospace;
+}
+
+h1, h2, h3 {
+  font-family: 'Sacramento', cursive;
 }
 
 .top {
@@ -33,6 +44,10 @@ body {
   text-align: center;
 }
 
+.input-color {
+  color: #000;
+}
+/*　共通レイアウト　ここまで　*/
 
 /*　テーブル枠線レイアウト　ここから　*/
 .table > thead > tr > th, .table > thead > tr > td,
@@ -40,6 +55,10 @@ body {
 .table > tfoot > tr > th, .table > tfoot > tr > td
 {
   border-style:none;
+}
+
+.margin-center {
+  margin: 0 auto;
 }
 
 /*　ハンバーガーメニュー　レイアウト　ここから　*/
@@ -237,7 +256,8 @@ body {
 }
 /* ハンバーガーメニュー内一覧　ここまで */
 
-/*ボタン　レイアウト　ここから*/
+/*　ボタン　レイアウト　ここから　*/
+/*　押して欲しいボタンレイアウト　*/
 .anime {
   width: 150px;
   text-align:  center;
@@ -245,6 +265,22 @@ body {
   text-decoration: none;
   color:  #fff;
   background-color: #3399FF;
+  border-radius:  5px;
+  transition: 0.5s;
+}
+
+.anime:hover {
+  opacity:  1;
+}
+
+/*　あまり押さないで欲しいボタンレイアウト　*/
+.anime_2 {
+  width: 150px;
+  text-align:  center;
+  font-size:  15px;
+  text-decoration: none;
+  color:  #fff;
+  background-color: #FF6699;
   border-radius:  5px;
   transition: 0.5s;
 }
@@ -273,13 +309,8 @@ footer {
 }
 /*　footer　レイアウト　ここまで */
 
-.input-color {
-  color: #000;
-}
 
-
-/*　レスポンシブ対応　*/
-
+/*　レスポンシブ対応　ここから　*/
 @media screen and (max-width:850px) {
   #hm-icon{
   position: fixed;
@@ -307,7 +338,7 @@ footer {
   width: 50px;
   }
 }
-
+/*　レスポンシブ対応　ここまで　*/
 
 
 

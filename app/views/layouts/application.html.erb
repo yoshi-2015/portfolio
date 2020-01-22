@@ -25,7 +25,7 @@
         <% end %>
         </li>
         <li class="">
-        <%= link_to users_path do %>
+        <%= link_to user_path(current_user.id) do %>
         <span class="glyphicon glyphicon-home" aria-hidden="true"></span> マイページ
         <% end %>
         </li>
@@ -35,8 +35,8 @@
         <% end %>
         </li>
         <li class="">
-        <%= link_to users_path do %>
-        <span class="glyphicon glyphicon-book" aria-hidden="true"></span> --
+        <%= link_to movies_search_path do %>
+        <span class="glyphicon glyphicon-book" aria-hidden="true"></span> 映画サーチ
         <% end %>
         </li>
         <li class="">
