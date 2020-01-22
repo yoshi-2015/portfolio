@@ -38,9 +38,9 @@
 </div>
 
 <div class="row">
-  <div class="col-xs-1"></div>
+  <div class="col-xs-2"></div>
 
-  <div class="col-xs-10">
+  <div class="col-xs-8">
     <table class="table">
       <thead>
         <tr>
@@ -63,5 +63,53 @@
     </table>
   </div>
 
-  <div class="col-xs-1"></div>
+  <div class="col-xs-2"></div>
+</div>
+
+<br>
+
+<div class="row">
+  <div class="col-xs-2"></div>
+
+  <div class="col-xs-8">
+  <%= form_with  do |f| %>
+  <!-- model: @movie_comment -->
+
+       <!-- if @memo_comment.errors.any? %>
+        <h2>= @memo_comment.errors.count %> errors prohibited this memo from being saved:</h2>
+
+        <ul>
+           @memo_comment.errors.full_messages.each do |message| %>
+            <li>= message %></li>
+           end %>
+        </ul>
+       end %> -->
+
+      <!-- <div id="rateYo"></div>
+       f.hidden_field :rates, id: "score" %>
+      <br> -->
+      <%= f.text_area :comment, class: "col-xs-12 input-color text-center" %>
+      <!-- <div class="col-xs-9"></div> -->
+      <div class="col-xs-10"></div>
+      <%= f.submit "コメントする", class: "btn smoothScroll anime_4 col-xs-2" %>
+    <% end %>
+  </div>
+
+<!--   <table class="table">
+    <thead>
+      <tr>
+        <th></th>
+        <th>User</th>
+        <th>Score</th>
+        <th>DateTime</th>
+        <th>Comment</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody id="comments_index">
+       render 'movies/comment', movie: @movie %>
+    </tbody>
+  </table> -->
+
+  <div class="col-xs-2"></div>
 </div>
