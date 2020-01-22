@@ -1,0 +1,54 @@
+<div class="row top">
+  <h2 class="text-center">Movie Seach</h2>
+
+  <div class="col-xs-1"></div>
+
+  <div class="col-xs-10">
+    <div class="text-center input-color">
+      <%= form_tag(movies_path, method: :get) do %>
+        <%= text_field_tag :looking_for %>
+        <%= submit_tag '検索', class: "anime" %>
+      <% end %>
+    </div>
+
+    <br>
+
+    <div class="text-center">
+      <% if @search_term.nil? %>
+        <p class="text-center">[<%= @search_term %>]と一致する情報が見つかりませんでした</p>
+      <% else %>
+        <p>[<%= @search_term %>]の検索結果</p>
+        <table class="table text-center">
+          <thead>
+            <tr>
+              <th></th>
+              <th class="text-center">Title</th>
+              <th class="text-center">Screening</th>
+              <th class="text-center">Synopsis</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @movie_results.each do |movie| %>
+                <tr  class="well">
+                  <td><%= image_tag("https://image.tmdb.org/t/p/w92/#{movie["poster_path"]}", :alt => 'poster') %></td>
+                  <td><%= link_to movie['title'], action: 'show', id: "#{movie["id"]}" %></td>
+                  <td><%= movie['release_date'] %></td>
+                  <td><%= movie['overview'] %></td>
+                </tr>
+            <% end %>
+          </tbody>
+        </table>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="col-xs-1"></div>
+</div>
+
+
+
+
+
+<!-- <input id="keyword" class="uk-input uk-form-width-large">
+  <button onclick="main();" class="uk-button uk-button-primary">送信</button>
+  <div id="container" class="uk-flex"></div> -->

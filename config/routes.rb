@@ -9,6 +9,5 @@ Rails.application.routes.draw do
     resource :favorites, only: [:index]
   end
 
-  get 'movies/search'
-  get 'movies/show'
+  resources :movies, only: [:index, :show]
 end

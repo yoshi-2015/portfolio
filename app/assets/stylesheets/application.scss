@@ -36,6 +36,10 @@ h1, h2, h3 {
   font-family: 'Sacramento', cursive;
 }
 
+.text-font {
+  font-family: 'Ubuntu Mono', monospace;
+}
+
 .top {
   margin-top: 80px;
 }
@@ -311,7 +315,7 @@ footer {
 
 
 /*　レスポンシブ対応　ここから　*/
-@media screen and (max-width:850px) {
+@media screen and (max-width:992px) {
   #hm-icon{
   position: fixed;
   right: 20px;

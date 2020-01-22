@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
-  def search
+  def index
     @search_term = params[:looking_for]
     @movie_results = Movie.search(@search_term)["results"]
     # binding.pry
