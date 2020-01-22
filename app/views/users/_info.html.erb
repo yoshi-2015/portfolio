@@ -11,13 +11,13 @@
     <tr>
       <th>
         <% if current_user != user %>
-           <% if user.followed_by?(current_user) %>
-              <%= link_to "フォロー解除", user_relationships_path(user.id), method: :delete, class: "btn smoothScroll anime" %>
-           <% else %>
-              <%= link_to "フォローする", user_relationships_path(user.id), method: :post, class: "btn smoothScroll anime" %>
-           <% end %>
-         <% else %>
-           <%= link_to "気になる人を探す", users_path, class: "btn smoothScroll anime" %>
+          <% if user.followed_by?(current_user) %>
+            <%= link_to "フォロー解除", user_relationships_path(user.id), method: :delete, class: "btn smoothScroll anime" %>
+          <% else %>
+            <%= link_to "フォローする", user_relationships_path(user.id), method: :post, class: "btn smoothScroll anime" %>
+          <% end %>
+        <% else %>
+          <%= link_to "気になる人を探す", users_path, class: "btn smoothScroll anime" %>
         <% end %>
       </th>
     </tr>
@@ -30,17 +30,17 @@
     <tr>
       <th>フォロー</th>
       <th>
-         <%= link_to follows_user_path(user.id) do %>
+        <%= link_to follows_user_path(user.id) do %>
           <%= user.followings.count %>
-         <% end %>
+        <% end %>
       </th>
     </tr>
     <tr>
       <th>フォロワー</th>
       <th>
-         <%= link_to followers_user_path(user.id) do %>
+        <%= link_to followers_user_path(user.id) do %>
           <%= user.followers.count %>
-         <% end %>
+        <% end %>
       </th>
     </tr>
   </thead>

@@ -3,12 +3,12 @@
 
   <div class="col-xs-1"></div>
 
-  <div class="col-xs-5 text-center">
+  <div class="col-xs-5 text-center responsive">
     <br>
     <%= image_tag("https://image.tmdb.org/t/p/w342/#{@movie_info['poster_path']}", :alt => 'poster') %>
   </div>
 
-  <div class="col-xs-5">
+  <div class="col-xs-5 responsive">
 
     <h1><%= @movie_info['title'] %></h1>
 
@@ -62,7 +62,6 @@
       </tbody>
     </table>
   </div>
-
 
   <div class="col-xs-1"></div>
 </div>

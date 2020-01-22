@@ -41,7 +41,7 @@
             <!-- フォロー -->
             <% if current_user != user %>
               <% if user.followed_by?(current_user) %>
-                  <%=link_to "フォロー解除", user_relationships_path(user.id), method: :delete, class: "btn smoothScroll anime" %>
+                <%=link_to "フォロー解除", user_relationships_path(user.id), method: :delete, class: "btn smoothScroll anime" %>
               <% end %>
             <% end %>
             <!-- フォロー -->

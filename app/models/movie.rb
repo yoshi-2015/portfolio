@@ -12,6 +12,11 @@ class Movie < ApplicationRecord
     get("", query: { query: term }) # {}の中身はパラメタ
   end
 
+  def self.newdetails id
+    base_uri "https://api.themoviedb.org/3/movie/now_playing"
+    get("", query: { } ) #パラメタなし
+  end
+
   # 指定の映画の詳細情報を取得
   # https://developers.themoviedb.org/3/movies/get-movie-detailsを参照
   def self.details id
@@ -19,7 +24,7 @@ class Movie < ApplicationRecord
     get("", query: { } ) #パラメタなし
   end
   # を参照
-  def self.cdetails id
+  def self.castdetails id
     base_uri "https://api.themoviedb.org/3/movie/#{id}/credits"
     get("", query: { } ) #パラメタなし
   end

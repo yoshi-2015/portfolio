@@ -21,14 +21,20 @@
 @import url('https://fonts.googleapis.com/css?family=Sacramento');
 @import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono');
 
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
 /*　共通レイアウト　ここから　*/
 body {
   /*背景レイアウト*/
-  /*background-image: url(/assets/film.jpg);
+  background-image: url(/assets/film.jpg);
   background-position: center;
   background-size: cover;
   color: #fff;
-  background-attachment: fixed;*/
+  background-attachment: fixed;
   font-family: 'Ubuntu Mono', monospace;
 }
 
@@ -93,8 +99,8 @@ h1, h2, h3 {
   height: 4px;
   border-radius: 4px;
   /*背景レイアウト変えたら変更*/
-  /*background-color: #fff;*/
-  background-color: #000;
+  background-color: #fff;
+/*  background-color: #000;*/
 }
 
 .menu-trigger span:nth-of-type(1) {
@@ -294,6 +300,11 @@ h1, h2, h3 {
 }
 /*　ボタン　レイアウト　ここまで　*/
 
+/*　movie index　の配列レイアウト　*/
+.movies_list {
+  display: inline-block;
+}
+
 /*　トップに戻るボタン　ここから　*/
 #back {
   position: fixed;
@@ -316,6 +327,21 @@ footer {
 
 /*　レスポンシブ対応　ここから　*/
 @media screen and (max-width:992px) {
+  body {
+  /*背景レイアウト*/
+  background-image: url(/assets/movie.jpg);
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  background-attachment: fixed;
+  font-family: 'Ubuntu Mono', monospace;
+  }
+
+  .responsive {
+    width: 100%;
+    text-align: center;
+  }
+
   #hm-icon{
   position: fixed;
   right: 20px;

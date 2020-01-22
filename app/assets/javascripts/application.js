@@ -16,6 +16,9 @@
 //= require activestorage
 //= require_tree .
 
+// movie_indexに関して
+
+
 // headerに関して
 $(function() {
   $('.menu-trigger').on('click', function() {
