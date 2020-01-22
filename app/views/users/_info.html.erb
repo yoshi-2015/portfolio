@@ -1,0 +1,68 @@
+
+<h3>ユーザー情報</h3>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>
+        <%= attachment_image_tag user,:profile_image, :fill, 100, 100, format: 'png', fallback: "no_image.jpg" %>
+      </th>
+    </tr>
+    <tr>
+      <th>
+        <% if current_user != user %>
+           <% if user.followed_by?(current_user) %>
+              <%= link_to "フォロー解除", user_relationships_path(user.id), method: :delete, class: "btn smoothScroll anime" %>
+           <% else %>
+              <%= link_to "フォローする", user_relationships_path(user.id), method: :post, class: "btn smoothScroll anime" %>
+           <% end %>
+         <% else %>
+           <%= link_to "気になる人を探す", users_path, class: "btn smoothScroll anime" %>
+        <% end %>
+      </th>
+    </tr>
+    <tr>
+      <th>名前</th>
+      <th>
+        <%= user.nickname %>
+      </th>
+    </tr>
+    <tr>
+      <th>フォロー</th>
+      <th>
+         <%= link_to follows_user_path(user.id) do %>
+          <%= user.followings.count %>
+         <% end %>
+      </th>
+    </tr>
+    <tr>
+      <th>フォロワー</th>
+      <th>
+         <%= link_to followers_user_path(user.id) do %>
+          <%= user.followers.count %>
+         <% end %>
+      </th>
+    </tr>
+  </thead>
+</table>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>introduction</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <%= user.introduction %>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div>
+  <p>
+    <%= link_to 'ユーザー情報変更', edit_user_path(user), class: "btn smoothScroll anime" %>
+  </p>
+</div>

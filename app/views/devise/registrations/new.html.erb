@@ -4,6 +4,8 @@
   <div class="col-xs-10">
     <h2 class="text-center">Sign up</h2>
 
+    <br>
+
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 
@@ -14,10 +16,14 @@
       </div>
       <!-- ログイン時に名前登録するため追加　ここまで -->
 
+      <br>
+
       <div class="field text-center">
         <%= f.label :email %><br />
         <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input-color" %>
       </div>
+
+      <br>
 
       <div class="field text-center">
         <%= f.label :password %>
@@ -27,10 +33,14 @@
         <%= f.password_field :password, autocomplete: "new-password", class: "input-color" %>
       </div>
 
+      <br>
+
       <div class="field text-center">
         <%= f.label :password_confirmation %><br />
         <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "input-color" %>
       </div>
+
+      <br>
 
       <div class="actions text-center">
         <%= f.submit "Sign up", class: "anime" %>

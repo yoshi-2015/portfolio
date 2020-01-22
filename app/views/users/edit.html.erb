@@ -1,2 +1,35 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<div class="row top">
+  <h2 class="text-center">User Edit</h2>
+
+  <div class="col-xs-1"></div>
+
+  <div class="col-xs-10">
+
+    <!-- 編集フォーマット -->
+    <% if @user.errors.any? %>
+      <h2><%= @user.errors.count %> errors prohibited this book from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    <% end %>
+
+    <%= form_for(@user) do |f| %>
+
+      <h4>名前</h4>
+      <%= f.text_field :nickname %>
+
+      <h4>画像</h4>
+      <%= f.attachment_field :profile_image %>
+
+      <h4>自己紹介</h4>
+      <%= f.text_area :introduction %>
+
+      <br><%= f.submit 'Update!' %></br>
+    <% end %>
+  </div>
+
+  <div class="col-xs-1"></div>
+</div>
