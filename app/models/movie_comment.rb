@@ -1,7 +1,6 @@
 class MovieComment < ApplicationRecord
   # アソシエーション
   belongs_to :user
-  belongs_to :movie
 
   # ネタバレステータスのenum指定
   enum spoiler_status: {無: 0, 有: 1}

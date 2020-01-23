@@ -57,6 +57,10 @@ h1, h2, h3 {
 .input-color {
   color: #000;
 }
+
+.margin-center {
+  margin: 0 auto;
+}
 /*　共通レイアウト　ここまで　*/
 
 /*　テーブル枠線レイアウト　ここから　*/
@@ -65,11 +69,15 @@ h1, h2, h3 {
 .table > tfoot > tr > th, .table > tfoot > tr > td
 {
   border-style:none;
+  text-align: center;
 }
+/*　テーブル枠線　レイアウト　ここまで　*/
 
-.margin-center {
-  margin: 0 auto;
+/*　user-image　レイアウト　ここから　*/
+.profile_image {
+  border-radius: 50%;
 }
+/*　user-image　レイアウト　ここまで　*/
 
 /*　ハンバーガーメニュー　レイアウト　ここから　*/
 #hm-icon{
@@ -425,6 +433,12 @@ footer {
     opacity:  0.9;
   }
   /*　ボタン　レイアウト　ここまで　*/
+
+  /*　テーブル枠線レイアウト　ここから　*/
+  .table {
+    
+  }
+  /*　テーブル枠線　レイアウト　ここまで　*/
 }
 /*　レスポンシブ対応　ここまで　*/
 
