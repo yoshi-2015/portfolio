@@ -333,6 +333,14 @@ h1, h2, h3 {
 }
 /*　ボタン　レイアウト　ここまで　*/
 
+/*　movie show ラジオボタンレイアウト　ここから　*/
+.radio_button {
+  text-align:  center;
+  height: 47px;
+  padding-top: 12px;
+}
+/*　movie show ラジオボタンレイアウト　ここまで　*/
+
 /*　movie index　の配列レイアウト　*/
 .movies_list {
   display: inline-block;
@@ -400,6 +408,23 @@ footer {
   #back img {
   width: 50px;
   }
+
+  /*　movieコメント用ボタンレイアウト　*/
+  .anime_4 {
+    width: 100px;
+    text-align:  center;
+    font-size:  15px;
+    text-decoration: none;
+    color:  #fff;
+    background-color: #FF9872;
+    border-radius:  5px;
+    transition: 0.5s;
+  }
+
+  .anime_4:hover {
+    opacity:  0.9;
+  }
+  /*　ボタン　レイアウト　ここまで　*/
 }
 /*　レスポンシブ対応　ここまで　*/
 

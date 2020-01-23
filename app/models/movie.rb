@@ -22,10 +22,13 @@ class Movie < ApplicationRecord
   def self.details id
     base_uri "https://api.themoviedb.org/3/movie/#{id}"
     get("", query: { } ) #パラメタなし
+    # has_many :movie_comments
   end
   # を参照
   def self.castdetails id
     base_uri "https://api.themoviedb.org/3/movie/#{id}/credits"
     get("", query: { } ) #パラメタなし
   end
+
+  has_many :movie_comments, dependent: :destroy
 end

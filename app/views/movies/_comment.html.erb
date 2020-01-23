@@ -1,0 +1,15 @@
+<% movie_comments.each do |movie_comment| %>
+<tr>
+  <td><%= attachment_image_tag movie_comment.user ,:profile_image, :fill, 50, 50, format: 'png', fallback: "no_image.jpg", size:'50x50' %></td>
+  <td><%= movie_comment.user.nickname %></td>
+  <td><%= movie_comment.rate %></td>
+  <td><%= movie_comment.created_at.strftime('%Y/%m/%d') %></td>
+  <td><%= movie_comment.comment %></td>
+<!--   <td>
+     if movie_comment.user_id == current_user.id %>
+      = link_to "コメントを削除", memo_memo_comment_path(movie_comment.id), method: :delete %>
+      , remote: true
+     end %>
+  </td> -->
+</tr>
+<% end %>
