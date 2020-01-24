@@ -7,8 +7,8 @@
   </div>
   <div class="col-xs-5">
     <br>
-    <h4><%= user.nickname %></h4>
-    <div>
+    <h4 class="text-center"><%= user.nickname %></h4>
+    <div class="text-center">
       <% if current_user != user %>
           <% if user.followed_by?(current_user) %>
             <%= link_to "フォロー解除", user_relationships_path(user.id), method: :delete, class: "btn smoothScroll anime" %>

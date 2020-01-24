@@ -77,7 +77,7 @@
        f.hidden_field :rates, id: "score" %>
       <br> -->
       <%= f.hidden_field :movie_id, :value => @movie_info['id'] %>
-      <%= f.text_area :comment, class: "col-xs-12 input-color text-center", size: "10x2" %>
+      <%= f.text_area :comment, class: "col-xs-12 input-color text-center text_field", size: "10x2" %>
       <div class="col-xs-7 radio_button">
         ネタバレ：　<%= f.radio_button :spoiler_status, :無 , checked: true %>　無　<%= f.radio_button :spoiler_status, :有 %>　有
       </div>
@@ -101,29 +101,13 @@
           <th>User</th>
           <th>Score</th>
           <th>DateTime</th>
-          <th>!spoiler!</th>
+          <th><span class="glyphicon glyphicon-remove" aria-hidden="true" style="color: red;"></span></th>
           <th>Comment</th>
           <th></th>
         </tr>
       </thead>
-      <tbody id="">
-        <!-- render 'movies/comment', movie_comments: @movie_comments %> -->
-        <% @movie_comments.each do |movie_comment| %>
-          <tr>
-            <td><%= attachment_image_tag movie_comment.user ,:profile_image, :fill, 50, 50, format: 'png', fallback: "no_image.jpg", size:'50x50' %></td>
-            <td><%= movie_comment.user.nickname %></td>
-            <td><%= movie_comment.rate %></td>
-            <td><%= movie_comment.created_at.strftime('%Y/%m/%d') %></td>
-            <td><%= movie_comment.spoiler_status %></td>
-            <td><%= movie_comment.comment %></td>
-            <!-- <td>
-               if movie_comment.user_id == current_user.id %>
-                = link_to "コメントを削除", memo_memo_comment_path(movie_comment.id), method: :delete %>
-                , remote: true
-               end %>
-            </td> -->
-          </tr>
-        <% end %>
+      <tbody id="comments_index">
+        <%= render 'movies/comment', movie_comments: @movie_comments %>
       </tbody>
     </table>
   </div>
