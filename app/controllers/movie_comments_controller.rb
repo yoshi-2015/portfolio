@@ -1,21 +1,45 @@
 class MovieCommentsController < ApplicationController
   def create
     # binding.pry
-    @movie_comment = current_user.movie_comments.new(movie_comment_params)
-    movie_id = @movie_comment.movie_id
-    @movie_comments = MovieComment.where(movie_id: movie_id)
-    if @movie_comment.save
+    # コメント投稿
+    @movie_newcomment = current_user.movie_comments.new(movie_comment_params)
+    # 非同期通信
+    movie_id = @movie_newcomment.movie_id
+    movie_comment = MovieComment.where(movie_id: movie_id)
+    @mymovie_comment = movie_comment.where(user_id: current_user.id)
+    @othermovie_comments = movie_comment.where.not(user_id: current_user.id)
+    # コメントを1人1つまでに制限
+    if @movie_newcomment = movie_comment.where(user_id: current_user.id).exists?
     else
-      render template: "memos/show"
+      @movie_newcomment = current_user.movie_comments.new(movie_comment_params)
+      if @movie_newcomment.save
+        flash[:notice] = 'レビューが記録されました。'
+      else
+        flash[:notice] = 'コメントは200文字以内で入力してください。'
+      end
+    end
+  end
+
+  def edit
+    @movie_comment = MovieComment.find(params[:id])
+  end
+
+  def update
+    @movie_comment = MovieComment.find(params[:id])
+    @movie = @movie_comment.movie_id
+    if @movie_comment.update(movie_comment_params)
+      redirect_to movie_path(@movie)
     end
   end
 
   def destroy
-    # binding.pry
     @movie_comment = MovieComment.find(params[:id])
     @movie_comment.destroy
+    # 非同期通信
     movie_id = @movie_comment.movie_id
-    @movie_comments = MovieComment.where(movie_id: movie_id)
+    movie_comments = MovieComment.where(movie_id: movie_id)
+    @mymovie_comment = movie_comments.where(user_id: current_user.id)
+    @othermovie_comments = movie_comments.where.not(user_id: current_user.id)
   end
 
   def movie_comment_params

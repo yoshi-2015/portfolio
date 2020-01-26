@@ -1,15 +1,28 @@
-<% movie_comments.each do |movie_comment| %>
+
+<% mymovie_comment.first(1).each do |mymovie_comment| %>
   <tr>
-    <td><%= attachment_image_tag movie_comment.user ,:profile_image, :fill, 50, 50, format: 'png', fallback: "no_image.jpg", size:'50x50' %></td>
-    <td><%= movie_comment.user.nickname %></td>
-    <td><%= movie_comment.rate %></td>
-    <td><%= movie_comment.created_at.strftime('%Y/%m/%d') %></td>
-    <td>ネタバレ<%= movie_comment.spoiler_status %></td>
-    <td><%= movie_comment.comment %></td>
+    <td><%= attachment_image_tag mymovie_comment.user ,:profile_image, :fill, 50, 50, format: 'png', fallback: "no_image.jpg", size:'50x50' %></td>
+    <td><%= mymovie_comment.user.nickname %></td>
+    <td><%= mymovie_comment.rate %></td>
+    <td><%= mymovie_comment.created_at.strftime('%Y/%m/%d') %></td>
+    <td><%= mymovie_comment.spoiler_status %></td>
+    <td><%= mymovie_comment.comment %></td>
     <td>
-      <% if movie_comment.user_id == current_user.id %>
-        <%= link_to "コメントを削除", movie_comment_path(movie_comment.id), method: :delete, class: "btn smoothScroll anime_2", remote: true %>
+      <% if mymovie_comment.user_id == current_user.id %>
+        <%= link_to "edit", edit_movie_comment_path(mymovie_comment.id), class: "btn smoothScroll comment_edit" %>
+        <%= link_to "delete", movie_comment_path(mymovie_comment.id), method: :delete, class: "btn smoothScroll comment_delete", remote: true %>
       <% end %>
     </td>
+  </tr>
+<% end %>
+
+<% othermovie_comments.each do |othermovie_comment| %>
+  <tr>
+    <td><%= attachment_image_tag othermovie_comment.user ,:profile_image, :fill, 50, 50, format: 'png', fallback: "no_image.jpg", size:'50x50' %></td>
+    <td><%= othermovie_comment.user.nickname %></td>
+    <td><%= othermovie_comment.rate %></td>
+    <td><%= othermovie_comment.created_at.strftime('%Y/%m/%d') %></td>
+    <td><%= othermovie_comment.spoiler_status %></td>
+    <td><%= othermovie_comment.comment %></td>
   </tr>
 <% end %>

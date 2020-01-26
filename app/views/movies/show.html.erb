@@ -29,7 +29,12 @@
       <% end %>
     </p>
 
-    <p><strong>ストーリ-：</strong><%= @movie_info['overview'] %></p>
+    <p><strong>ストーリー：</strong><%= @movie_info['overview'] %></p>
+
+    <br>
+
+    <p>Average Score</p>
+    <h2><%= @average.round(1) %><strong> / 5.0</strong></h2>
 
     <br>
   </div>
@@ -72,12 +77,13 @@
   <div class="col-xs-2"></div>
 
   <div class="col-xs-8">
-    <%= form_with model: @movie_comment do |f| %>
-      <!-- <div id="rateYo"></div>
-       f.hidden_field :rates, id: "score" %>
-      <br> -->
+    <%= form_with model: @movie_newcomment do |f| %>
+
+      <div id="rateYo" class="margin-center"></div>
+      <%= f.hidden_field :rate, id: "score" %>
+      <br>
       <%= f.hidden_field :movie_id, :value => @movie_info['id'] %>
-      <%= f.text_area :comment, class: "col-xs-12 input-color text-center text_field", size: "10x2" %>
+      <%= f.text_area :comment, class: "col-xs-12 input-color text-center text_field", size: "10x2", :placeholder => "コメントは　1人1つ500文字　まで " %>
       <div class="col-xs-7 radio_button">
         ネタバレ：　<%= f.radio_button :spoiler_status, :無 , checked: true %>　無　<%= f.radio_button :spoiler_status, :有 %>　有
       </div>
@@ -90,10 +96,10 @@
 </div>
 
 <div class="row top">
-  <h3 class="text-center">Comment</h3>
-  <div class="col-xs-2"></div>
+  <h2 class="text-center">Comment</h2>
+  <div class="col-xs-1"></div>
 
-  <div class="col-xs-8 commnet_table">
+  <div class="col-xs-10 commnet_table">
     <table class="table">
       <thead>
         <tr>
@@ -103,14 +109,14 @@
           <th>DateTime</th>
           <th><span class="glyphicon glyphicon-remove" aria-hidden="true" style="color: red;"></span></th>
           <th>Comment</th>
-          <th></th>
+          <th>Edit/Delete</th>
         </tr>
       </thead>
-      <tbody id="comments_index">
-        <%= render 'movies/comment', movie_comments: @movie_comments %>
+      <tbody class="comments_index">
+        <%= render 'movies/comment', mymovie_comment: @mymovie_comment, othermovie_comments: @othermovie_comments %>
       </tbody>
     </table>
   </div>
 
-  <div class="col-xs-2"></div>
+  <div class="col-xs-1"></div>
 </div>

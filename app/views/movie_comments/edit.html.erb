@@ -1,0 +1,43 @@
+<div class="row top">
+  <h2 class="text-center"> My Comment Edit</h2>
+
+  <div class="col-xs-1"></div>
+
+  <div class="col-xs-10">
+
+    <!-- 編集フォーマット -->
+    <% if @movie_comment.errors.any? %>
+      <h2><%= @movie_comment.errors.count %> errors prohibited this book from being saved:</h2>
+
+      <ul>
+      <% @movie_comment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    <% end %>
+
+    <%= form_for(@movie_comment) do |f| %>
+
+      <div class="text-center">
+        <h4></h4>
+        <%= f.text_area :comment, class: "col-xs-12 input-color text-center text_field", size: "10x5" %>
+      </div>
+
+      <br>
+
+      <div class="text-center">
+        <div class="col-xs-7 radio_button">
+        ネタバレ：　<%= f.radio_button :spoiler_status, :無 , checked: true %>　無　<%= f.radio_button :spoiler_status, :有 %>　有
+      </div>
+      </div>
+
+      <br>
+
+      <div class="text-center">
+        <br><%= f.submit 'Update!' , class: "btn smoothScroll anime_6" %></br>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="col-xs-1"></div>
+</div>
