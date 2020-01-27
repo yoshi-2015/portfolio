@@ -11,14 +11,13 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require jquery
 //= require bootstrap-sprockets
 //= require activestorage
 //= require_tree .
 
 // movie_indexに関して
 
-
+u
 // headerに関して
 $(function() {
   $('.menu-trigger').on('click', function() {
