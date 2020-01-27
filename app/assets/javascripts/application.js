@@ -14,6 +14,7 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require activestorage
+//= require jquery.rateyo.min
 //= require_tree .
 
 // movie_indexに関して
