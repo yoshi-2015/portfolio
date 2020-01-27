@@ -30,7 +30,8 @@
 /*　共通レイアウト　ここから　*/
 body {
   /*背景レイアウト*/
-  background-image: url(/assets/film.jpg);
+  /*background-image: url(/assets/film.jpg);*/
+  background-image: image-url("film.jpg");
   background-position: center;
   background-size: cover;
   color: #fff;
