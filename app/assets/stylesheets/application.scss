@@ -396,7 +396,8 @@ footer {
 @media screen and (max-width:992px) {
   body {
   /*背景レイアウト*/
-  background-image: url(/assets/movie.jpg);
+  /*background-image: url(/assets/movie.jpg);*/
+  background-image: image-url("movie.jpg");
   background-position: center;
   background-size: cover;
   color: #fff;
