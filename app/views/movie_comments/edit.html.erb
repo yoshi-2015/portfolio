@@ -19,7 +19,8 @@
     <%= form_for(@movie_comment) do |f| %>
 
       <div class="text-center">
-        <h4></h4>
+      <div id="rateYo" class="margin-center"></div>
+        <%= f.hidden_field :rate, id: "score" %>
         <%= f.text_area :comment, class: "col-xs-12 input-color text-center text_field", size: "10x5" %>
       </div>
 
@@ -34,7 +35,7 @@
       <br>
 
       <div class="text-center">
-        <br><%= f.submit 'Update!' , class: "btn smoothScroll anime_6" %></br>
+        <br><%= f.submit 'Update!' , class: "btn smoothScroll anime" %></br>
       </div>
     <% end %>
   </div>

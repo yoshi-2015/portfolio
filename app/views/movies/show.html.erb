@@ -83,7 +83,7 @@
       <%= f.hidden_field :rate, id: "score" %>
       <br>
       <%= f.hidden_field :movie_id, :value => @movie_info['id'] %>
-      <%= f.text_area :comment, class: "col-xs-12 input-color text-center text_field", size: "10x2", :placeholder => "コメントは　1人1つ500文字　まで " %>
+      <%= f.text_area :comment, class: "col-xs-12 input-color text-center text_field", size: "10x2", :placeholder => "コメントは 『　1人1つ500文字　』　まで " %>
       <div class="col-xs-7 radio_button">
         ネタバレ：　<%= f.radio_button :spoiler_status, :無 , checked: true %>　無　<%= f.radio_button :spoiler_status, :有 %>　有
       </div>
