@@ -11,6 +11,30 @@
 // about supported directives.
 //
 //= require rails-ujs
+//= require jquery
+//= require bootstrap-sprockets
 //= require activestorage
-//= require turbolinks
+//= require jquery.rateyo.min
 //= require_tree .
+
+// movie_indexに関して
+
+
+// headerに関して
+$(function() {
+  $('.menu-trigger').on('click', function() {
+    $(this).toggleClass('active');
+    $('#sp-menu').fadeToggle();
+    return false;
+  });
+ });
+
+// topに戻るボタンに関して
+$(function() {
+  $('#back a').on('click',function(){
+    $('body, html').animate({
+      scrollTop:0
+    }, 800);
+      return false;
+  });
+});

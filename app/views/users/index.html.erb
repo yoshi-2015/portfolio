@@ -1,0 +1,57 @@
+<div class="row top">
+  <h2 class="text-center">Users</h2>
+</div>
+
+
+<div class="row">
+  <div class="col-xs-1"></div>
+  <div class="col-xs-10">
+    <table class="table">
+        <thead>
+          <tr>
+            <th>ユーザー画像</th>
+            <th>お名前</th>
+            <th>フォロー</th>
+            <th>フォロワー</th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @users.each do |user| %>
+            <tr>
+              <td>
+                <%= attachment_image_tag user,:profile_image, :fill, 50, 50, format: 'png', fallback: "no_image.jpg", size:'50x50' %>
+              </td>
+              <td>
+                <%= user.nickname %>
+              </td>
+              <td>
+                 <%= user.followings.count %>
+              </td>
+              <td>
+                 <%= user.followers.count %>
+              </td>
+              <td>
+                <%= link_to "詳細", user_path(user.id), class: "btn smoothScroll anime" %>
+              </td>
+              <td>
+              <!-- フォロー -->
+               <% if current_user != user %>
+                 <% if user.followed_by?(current_user) %>
+                    <%= link_to "フォロー解除", user_relationships_path(user.id), method: :delete, class: "btn smoothScroll anime_2" %>
+                 <% else %>
+                    <%= link_to "フォローする", user_relationships_path(user.id), method: :post, class: "btn smoothScroll anime" %>
+                 <% end %>
+               <% end %>
+              <!-- フォロー -->
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="col-xs-1"></div>
+</div>

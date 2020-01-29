@@ -1,0 +1,60 @@
+<div class="row top">
+  <h2 class="text-center">Movie Seach</h2>
+
+  <div class="col-xs-1"></div>
+
+  <div class="col-xs-10">
+    <div class="text-center input-color">
+      <%= form_tag(movies_path, method: :get) do %>
+        <%= text_field_tag :looking_for %>
+        <%= submit_tag '検索', class: "btn smoothScroll anime_3" %>
+      <% end %>
+    </div>
+
+    <br>
+
+    <div class="text-center">
+      <% if @search_term.blank? %>
+        <p class="text-center">[<%= @search_term %>]と一致する情報が見つかりませんでした</p>
+
+        <br>
+
+        <div>
+          <h2 class="text-center">Now Playing</h2>
+        </div>
+
+        <div >
+          <% @new_movie_info.each do |nowmovie| %>
+            <div class="clearfix movies_list text-center">
+              <div>
+                <%= link_to movie_path(nowmovie["id"]) do %>
+                  <%= image_tag("https://image.tmdb.org/t/p/w154/#{nowmovie["poster_path"]}", :alt => 'poster') %>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+
+      <% else %>
+        <p>[<%= @search_term %>]の検索結果</p>
+
+        <br>
+
+        <h2 class="text-center">Seach Movies</h2>
+        <div >
+          <% @movie_results.each do |movie| %>
+            <div class="clearfix movies_list text-center">
+              <div>
+                <%= link_to movie_path(movie["id"]) do %>
+                  <%= image_tag("https://image.tmdb.org/t/p/w185/#{movie["poster_path"]}", :alt => 'poster') %>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="col-xs-1"></div>
+</div>

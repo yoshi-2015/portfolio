@@ -1,0 +1,469 @@
+ /*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+/*bootstrapインポート*/
+@import "bootstrap-sprockets";
+@import "bootstrap";
+/*フォントインポート*/
+@import url('https://fonts.googleapis.com/css?family=Sacramento');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono');
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/*　共通レイアウト　ここから　*/
+body {
+  /*背景レイアウト*/
+  /*background-image: url(/assets/film.jpg);*/
+  background-image: image-url("film.jpg");
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  background-attachment: fixed;
+  font-family: 'Ubuntu Mono', monospace;
+}
+
+h1, h2, h3 {
+  font-family: 'Sacramento', cursive;
+}
+
+.text-font {
+  font-family: 'Ubuntu Mono', monospace;
+}
+
+.top {
+  margin-top: 80px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.input-color {
+  color: #000;
+}
+
+.margin-center {
+  margin: 0 auto;
+}
+
+.width100 {
+  width: 100%;
+}
+/*　共通レイアウト　ここまで　*/
+
+/*　テーブル枠線レイアウト　ここから　*/
+.table > thead > tr > th, .table > thead > tr > td,
+.table > tbody > tr > th, .table > tbody > tr > td,
+.table > tfoot > tr > th, .table > tfoot > tr > td
+{
+  border-style:none;
+  text-align: center;
+}
+/*　テーブル枠線　レイアウト　ここまで　*/
+
+/*　user-image　レイアウト　ここから　*/
+.profile_image {
+  border-radius: 50%;
+}
+/*　user-image　レイアウト　ここまで　*/
+
+/*　ハンバーガーメニュー　レイアウト　ここから　*/
+#hm-icon{
+  position: fixed;
+  right: 200px;
+  top: 20px;
+  z-index: 11;
+}
+
+.menu-trigger,
+.menu-trigger span {
+  display: inline-block;
+  transition: all .4s;
+  box-sizing: border-box;
+}
+
+.menu-trigger {
+  position: relative;
+  width: 50px;
+  height: 44px;
+}
+
+.menu-trigger span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  border-radius: 4px;
+  /*背景レイアウト変えたら変更*/
+  background-color: #fff;
+/*  background-color: #000;*/
+}
+
+.menu-trigger span:nth-of-type(1) {
+  top: 0;
+}
+
+.menu-trigger span:nth-of-type(2) {
+  top: 20px;
+}
+
+.menu-trigger span:nth-of-type(3) {
+  bottom: 0;
+}
+/*　ハンバーガーメニュー　レイアウト　ここまで　*/
+
+/*　ハンバーガーメニュー　アクション　ここから　*/
+.menu-trigger span:nth-of-type(1) {
+  -webkit-animation: menu-bar01 .75s forwards;
+  animation: menu-bar01 .75s forwards;
+}
+
+@-webkit-keyframes menu-bar01 {
+  0% {
+    -webkit-transform: translateY(20px) rotate(45deg);
+  }
+  50% {
+    -webkit-transform: translateY(20px) rotate(0);
+  }
+  100% {
+    -webkit-transform: translateY(0) rotate(0);
+  }
+}
+
+@keyframes menu-bar01 {
+  0% {
+    transform: translateY(20px) rotate(45deg);
+  }
+  50% {
+    transform: translateY(20px) rotate(0);
+  }
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+}
+
+.menu-trigger span:nth-of-type(2) {
+  transition: all .25s .25s;
+  opacity: 1;
+}
+
+.menu-trigger span:nth-of-type(3) {
+  -webkit-animation: menu-bar02 .75s forwards;
+  animation: menu-bar02 .75s forwards;
+  }
+  @-webkit-keyframes menu-bar02 {
+  0% {
+    -webkit-transform: translateY(-20px) rotate(-45deg);
+  }
+  50% {
+    -webkit-transform: translateY(-20px) rotate(0);
+  }
+  100% {
+    -webkit-transform: translateY(0) rotate(0);
+  }
+}
+
+@keyframes menu-bar02 {
+  0% {
+    transform: translateY(-20px) rotate(-45deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(0);
+  }
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+}
+
+.menu-trigger.active span:nth-of-type(1) {
+  -webkit-animation: active-menu-bar01 .75s forwards;
+  animation: active-menu-bar01 .75s forwards;
+  }
+  @-webkit-keyframes active-menu-bar01 {
+  0% {
+    -webkit-transform: translateY(0) rotate(0);
+  }
+  50% {
+    -webkit-transform: translateY(20px) rotate(0);
+  }
+  100% {
+    -webkit-transform: translateY(20px) rotate(45deg);
+  }
+}
+
+@keyframes active-menu-bar01 {
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(20px) rotate(0);
+  }
+  100% {
+    transform: translateY(20px) rotate(45deg);
+  }
+}
+
+.menu-trigger.active span:nth-of-type(2) {
+  opacity: 0;
+}
+
+.menu-trigger.active span:nth-of-type(3) {
+  -webkit-animation: active-menu-bar03 .75s forwards;
+  animation: active-menu-bar03 .75s forwards;
+}
+
+@-webkit-keyframes active-menu-bar03 {
+  0% {
+    -webkit-transform: translateY(0) rotate(0);
+  }
+  50% {
+    -webkit-transform: translateY(-20px) rotate(0);
+  }
+  100% {
+    -webkit-transform: translateY(-20px) rotate(-45deg);
+  }
+}
+
+@keyframes active-menu-bar03 {
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(-20px) rotate(0);
+  }
+  100% {
+    transform: translateY(-20px) rotate(-45deg);
+  }
+}
+/*　ハンバーガーメニュー　アクション　ここまで　*/
+
+/* ハンバーガーメニュー内一覧　ここから */
+#sp-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(255,153,51,0.95);
+  color: #fff;
+  width: 100%;
+  display: none;
+  z-index: 11;
+}
+
+#sp-menu li{
+  text-align: center;
+  margin: 30px 0;
+  list-style: none;
+}
+
+#sp-menu a{
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+/* ハンバーガーメニュー内一覧　ここまで */
+
+/*　ボタン　レイアウト　ここから　*/
+/*　押して欲しいボタンレイアウト　*/
+.anime {
+  width: 150px;
+  text-align:  center;
+  font-size:  15px;
+  text-decoration: none;
+  color:  #fff;
+  background-color: #3399FF;
+  border-radius:  5px;
+  transition: 0.5s;
+}
+
+.anime:hover {
+  opacity:  0.8;
+}
+
+/*　あまり押さないで欲しいボタンレイアウト　*/
+.anime_2 {
+  width: 150px;
+  text-align:  center;
+  font-size:  15px;
+  text-decoration: none;
+  color:  #fff;
+  background-color: #FF6699;
+  border-radius:  5px;
+  transition: 0.5s;
+}
+
+.anime_2:hover {
+  opacity:  0.8;
+}
+
+/*　movie検索用ボタンレイアウト　*/
+.anime_3 {
+  margin-bottom: 5px;
+  width: 150px;
+  text-align:  center;
+  font-size:  15px;
+  text-decoration: none;
+  color:  #fff;
+  background-color: #FF9872;
+  border-radius:  5px;
+  transition: 0.5s;
+}
+
+.anime_3:hover {
+  opacity:  0.9;
+}
+
+/*　movieコメント用ボタンレイアウト　*/
+/*　コメントボタン　ここから　*/
+.anime_4 {
+  height: 47px;
+  text-align:  center;
+  font-size:  15px;
+  text-decoration: none;
+  color:  #fff;
+  background-color: #FF9872;
+  border-radius:  5px;
+  transition: 0.5s;
+}
+
+.anime_4:hover {
+  opacity:  0.9;
+}
+
+/*　コメント編集・削除リンク　レイアウト ここから　*/
+.comment_edit {
+  color: #3399FF;
+}
+.comment_delete {
+  color: #FF6600;
+}
+/*　コメント編集リンク　レイアウト ここまで　*/
+
+
+/*　コメントボタン　ここまで　*/
+/*　ボタン　レイアウト　ここまで　*/
+
+/*　movie show ラジオボタンレイアウト　ここから　*/
+.radio_button {
+  text-align:  center;
+  height: 47px;
+  padding-top: 12px;
+}
+/*　movie show ラジオボタンレイアウト　ここまで　*/
+
+/*　movie index　の配列レイアウト　*/
+.movies_list {
+  display: inline-block;
+}
+
+/*　トップに戻るボタン　ここから　*/
+#back {
+  position: fixed;
+  right: 200px;
+  bottom: 20px;
+}
+
+#back img {
+  width: 50px;
+}
+/*　トップに戻るボタン　ここまで　*/
+
+/*　footer　レイアウト　ここから　*/
+footer {
+  margin: 100px auto;
+  text-align: center;
+}
+/*　footer　レイアウト　ここまで */
+
+
+/*　レスポンシブ対応　ここから　*/
+@media screen and (max-width:992px) {
+  body {
+  /*背景レイアウト*/
+  /*background-image: url(/assets/movie.jpg);*/
+  background-image: image-url("movie.jpg");
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  background-attachment: fixed;
+  font-family: 'Ubuntu Mono', monospace;
+  }
+
+  .responsive {
+    width: 100%;
+    text-align: center;
+  }
+
+  #hm-icon{
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  z-index: 11;
+  }
+
+  .menu-trigger span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #3366FF;
+  border-radius: 4px;
+  }
+
+  #back {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  }
+
+  #back img {
+  width: 50px;
+  }
+
+  /*　movieコメント用ボタンレイアウト　*/
+  .anime_4 {
+    width: 100px;
+    text-align:  center;
+    font-size:  15px;
+    text-decoration: none;
+    color:  #fff;
+    background-color: #FF9872;
+    border-radius:  5px;
+    transition: 0.5s;
+  }
+
+  .anime_4:hover {
+    opacity:  0.9;
+  }
+  /*　ボタン　レイアウト　ここまで　*/
+
+  /*　テーブル枠線レイアウト　ここから　*/
+  .table {
+
+  }
+  /*　テーブル枠線　レイアウト　ここまで　*/
+}
+/*　レスポンシブ対応　ここまで　*/
+
+
+
+
+
+
+

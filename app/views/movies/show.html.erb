@@ -1,0 +1,122 @@
+<div class="row top">
+  <h2 class="text-center">Movie Seach</h2>
+
+  <div class="col-xs-1"></div>
+
+  <div class="col-xs-5 text-center responsive">
+    <br>
+    <%= image_tag("https://image.tmdb.org/t/p/w342/#{@movie_info['poster_path']}", :alt => 'poster') %>
+  </div>
+
+  <div class="col-xs-5 responsive">
+
+    <h1><%= @movie_info['title'] %></h1>
+
+    <h3 class="text-font" ><strong>原題：</strong><%= @movie_info['original_title'] %></h3>
+
+    <p><strong>上映日：</strong><%= @movie_info['release_date'] %></p>
+
+    <p><strong>上映時間：</strong><%= @movie_info['runtime'] %>分</p>
+
+    <p>
+      <strong>ジャンル：</strong>
+      <% @movie_info['genres'].each do |genre| %>
+        <% if genre == @movie_info['genres'].last %>
+          <span><%= genre['name'] %></span>
+        <% else %>
+          <span><%= genre['name'] %>、</span>
+        <% end %>
+      <% end %>
+    </p>
+
+    <p><strong>ストーリー：</strong><%= @movie_info['overview'] %></p>
+
+    <br>
+
+    <p>Average Score</p>
+    <h2><%= @average.round(1) %><strong> / 5.0</strong></h2>
+
+    <br>
+  </div>
+
+  <div class="col-xs-1"></div>
+</div>
+
+<div class="row">
+  <div class="col-xs-2"></div>
+
+  <div class="col-xs-8">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Cast Image</th>
+          <th>Cast Name</th>
+          <th>Character Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @cast_info.first(3).each do |cast| %>
+          <div>
+            <tr>
+              <td><%= image_tag("https://image.tmdb.org/t/p/w92/#{cast["profile_path"]}") %></td>
+              <td><h3><%= cast['name'] %></h3></td>
+              <td><h3><%= cast['character'] %></h3></td>
+            </tr>
+          </div>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="col-xs-2"></div>
+</div>
+
+<br>
+
+<div class="row">
+  <div class="col-xs-2"></div>
+
+  <div class="col-xs-8">
+    <%= form_with model: @movie_newcomment do |f| %>
+
+      <div id="rateYo" class="margin-center"></div>
+      <%= f.hidden_field :rate, id: "score" %>
+      <br>
+      <%= f.hidden_field :movie_id, :value => @movie_info['id'] %>
+      <%= f.text_area :comment, class: "col-xs-12 input-color text-center text_field", size: "10x2", :placeholder => "コメントは　1人1つ500文字　まで " %>
+      <div class="col-xs-7 radio_button">
+        ネタバレ：　<%= f.radio_button :spoiler_status, :無 , checked: true %>　無　<%= f.radio_button :spoiler_status, :有 %>　有
+      </div>
+      <div class="col-xs-1"></div>
+      <%= f.submit "Comment", class: "btn smoothScroll anime_4 col-xs-2" %>
+    <% end %>
+  </div>
+
+  <div class="col-xs-2"></div>
+</div>
+
+<div class="row top">
+  <h2 class="text-center">Comment</h2>
+  <div class="col-xs-1"></div>
+
+  <div class="col-xs-10 commnet_table">
+    <table class="table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>User</th>
+          <th>Score</th>
+          <th>DateTime</th>
+          <th><span class="glyphicon glyphicon-remove" aria-hidden="true" style="color: red;"></span></th>
+          <th>Comment</th>
+          <th>Edit/Delete</th>
+        </tr>
+      </thead>
+      <tbody class="comments_index">
+        <%= render 'movies/comment', mymovie_comment: @mymovie_comment, othermovie_comments: @othermovie_comments %>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="col-xs-1"></div>
+</div>
