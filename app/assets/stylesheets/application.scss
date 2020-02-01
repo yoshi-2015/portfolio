@@ -91,7 +91,7 @@ h1, h2, h3 {
   position: fixed;
   right: 200px;
   top: 20px;
-  z-index: 10;
+  z-index: 100;
 }
 
 .menu-trigger,
@@ -265,7 +265,7 @@ h1, h2, h3 {
   color: #fff;
   width: 100%;
   display: none;
-  z-index: 1000;
+  z-index: 100;
 }
 
 #sp-menu li{
@@ -474,7 +474,7 @@ footer {
   position: fixed;
   right: 20px;
   top: 20px;
-  z-index: 11;
+  z-index: 110;
   }
 
   .menu-trigger span {
