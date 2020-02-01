@@ -1,6 +1,5 @@
 class MovieCommentsController < ApplicationController
   def create
-    # binding.pry
     # コメント投稿
     @movie_newcomment = current_user.movie_comments.new(movie_comment_params)
     # 非同期通信
@@ -13,9 +12,6 @@ class MovieCommentsController < ApplicationController
     else
       @movie_newcomment = current_user.movie_comments.new(movie_comment_params)
       if @movie_newcomment.save
-        flash[:notice] = 'レビューが記録されました。'
-      else
-        flash[:notice] = 'コメントは200文字以内で入力してください。'
       end
     end
   end
@@ -42,6 +38,7 @@ class MovieCommentsController < ApplicationController
     @othermovie_comments = movie_comments.where.not(user_id: current_user.id)
   end
 
+  private
   def movie_comment_params
     params.require(:movie_comment).permit(:comment, :user_id, :movie_id, :rate, :spoiler_status)
   end

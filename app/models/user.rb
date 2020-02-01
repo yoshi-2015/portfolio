@@ -7,6 +7,7 @@ class User < ApplicationRecord
   # アソシエーション
   #　今回は1:Nにおいて、1が削除されたら関連するNも削除
   has_many :movie_comments, dependent: :destroy
+  has_many :checks, dependent: :destroy
 
   # refile magic
   attachment :profile_image

@@ -346,6 +346,7 @@ h1, h2, h3 {
   opacity:  0.9;
 }
 
+/*　コメントボタン　ここまで　*/
 /*　コメント編集・削除リンク　レイアウト ここから　*/
 .comment_edit {
   color: #3399FF;
@@ -371,6 +372,38 @@ h1, h2, h3 {
 .movies_list {
   display: inline-block;
 }
+
+/*　Check機能ボタンレイアウト　ここから　*/
+.anime_5 {
+  height: 47px;
+  text-align:  center;
+  font-size:  30px;
+  text-decoration: none;
+  color:  #fff;
+  background-color: rgba(0,0,0,0.0);
+  border-radius:  5px;
+  transition: 0.5s;
+}
+
+.anime_5:hover {
+  opacity:  0.9;
+}
+
+.anime_6 {
+  height: 47px;
+  text-align:  center;
+  font-size:  30px;
+  text-decoration: none;
+  color:  red;
+  background-color: rgba(0,0,0,0.0);
+  border-radius:  5px;
+  transition: 0.5s;
+}
+
+.anime_6:hover {
+  opacity:  0.9;
+}
+/*　Check機能ボタンレイアウト　ここまで　*/
 
 /*　トップに戻るボタン　ここから　*/
 #back {
@@ -451,6 +484,37 @@ footer {
   .anime_4:hover {
     opacity:  0.9;
   }
+
+  /*　いいね機能用ボタンレイアウト　*/
+  .anime_5 {
+  height: 47px;
+  text-align:  center;
+  font-size:  20px;
+  text-decoration: none;
+  color:  #fff;
+  background-color: rgba(0,0,0,0.0);
+  border-radius:  5px;
+  transition: 0.5s;
+}
+
+.anime_5:hover {
+  opacity:  0.9;
+}
+
+.anime_6 {
+  height: 47px;
+  text-align:  center;
+  font-size:  20px;
+  text-decoration: none;
+  color:  red;
+  background-color: rgba(0,0,0,0.0);
+  border-radius:  5px;
+  transition: 0.5s;
+}
+
+.anime_6:hover {
+  opacity:  0.9;
+}
   /*　ボタン　レイアウト　ここまで　*/
 
   /*　テーブル枠線レイアウト　ここから　*/

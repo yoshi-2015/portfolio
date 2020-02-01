@@ -1,0 +1,13 @@
+<% if checkjudgment.blank? %>
+  <%= form_with url: checks_path do |f| %>
+    <%= f.hidden_field :movie_id, :value => apimovie_id %>
+    <%= f.submit "✔︎", class: "btn smoothScroll anime_5" %>
+  <% end %>
+<% else %>
+  <%= form_with url: check_path(checkjudgment.first.id), method: (:delete) do |f| %>
+    <%= f.submit "✔", class: "btn smoothScroll anime_6" %>
+  <% end %>
+<% end %>
+<div calss="text-center">
+  <%= moviechecks.count %>Check!
+</div>
