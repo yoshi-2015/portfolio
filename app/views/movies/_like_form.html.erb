@@ -1,0 +1,17 @@
+<% if likejudgment.blank? %>
+  <%= form_with url: likes_path do |f| %>
+    <%= f.hidden_field :movie_id, :value => apimovie_id %>
+    <div class="wrap">
+      <%= f.submit "❤︎", class: "button" %>
+    </div>
+  <% end %>
+<% else %>
+  <%= form_with url: like_path(likejudgment.first.id), method: (:delete) do |f| %>
+    <div class="wrap">
+      <%= f.submit "❤︎", class: "button2" %>
+    </div>
+  <% end %>
+<% end %>
+<div calss="text-center">
+  <%= movielikes.count %>Like!
+</div>

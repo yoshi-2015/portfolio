@@ -25,12 +25,13 @@ class MoviesController < ApplicationController
     : ratesum / movie_comments.length
 
     # check機能１
-    @check = Check.new
     @moviechecks = Check.where(movie_id: @apimovie_id)
     @checkjudgment = @moviechecks.where(user_id: current_user.id)
     # mark機能
-    @merk = Mark.new
     @moviemarks = Mark.where(movie_id: @apimovie_id)
     @markjudgment = @moviemarks.where(user_id: current_user.id)
+    # like機能
+    @movielikes = Like.where(movie_id: @apimovie_id)
+    @likejudgment = @movielikes.where(user_id: current_user.id)
   end
 end

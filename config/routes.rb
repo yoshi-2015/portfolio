@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :movie_comments, only: [:create, :edit, :update, :destroy]
   resources :checks, only: [:create, :destroy]
   resources :marks, only: [:create, :destroy]
+  resources :likes, only: [:create, :destroy]
 
   root to: 'movies#index'
 end

@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :movie_comments, dependent: :destroy
   has_many :checks, dependent: :destroy
   has_many :marks, dependent: :destroy
+  has_many :likes, dependent: :destroy
 
   # refile magic
   attachment :profile_image
