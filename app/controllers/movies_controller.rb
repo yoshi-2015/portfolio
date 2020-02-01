@@ -24,9 +24,13 @@ class MoviesController < ApplicationController
     @average = movie_comments.length == 0 ? 0
     : ratesum / movie_comments.length
 
-    # いいね機能１
+    # check機能１
     @check = Check.new
     @moviechecks = Check.where(movie_id: @apimovie_id)
     @checkjudgment = @moviechecks.where(user_id: current_user.id)
+    # mark機能
+    @merk = Mark.new
+    @moviemarks = Mark.where(movie_id: @apimovie_id)
+    @markjudgment = @moviemarks.where(user_id: current_user.id)
   end
 end

@@ -3,7 +3,7 @@ class ChecksController < ApplicationController
     @check = current_user.checks.new
     @check.movie_id = params[:movie_id]
     @check.save
-    # 補導機通信
+    # 非同期通信
     @apimovie_id = @check.movie_id
     @moviechecks = Check.where(movie_id: @apimovie_id)
     @checkjudgment = @moviechecks.where(user_id: current_user.id)
@@ -12,10 +12,9 @@ class ChecksController < ApplicationController
   def destroy
     @check = Check.find(params[:id])
     @check.destroy
-    # binding.pry
     # 非同期通信
     @apimovie_id = @check.movie_id
-    @moviechecks = Check.where(movie_id: @movie_info)
+    @moviechecks = Check.where(movie_id: @apimovie_id)
     @checkjudgment = @moviechecks.where(user_id: current_user.id)
   end
 
