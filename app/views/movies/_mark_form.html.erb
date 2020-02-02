@@ -1,0 +1,17 @@
+<% if markjudgment.blank? %>
+  <%= form_with url: marks_path do |f| %>
+    <%= f.hidden_field :movie_id, :value => apimovie_id %>
+    <div class="wrap">
+      <%= f.submit "〆", class: "button" %>
+    </div>
+  <% end %>
+<% else %>
+  <%= form_with url: mark_path(markjudgment.first.id), method: (:delete) do |f| %>
+    <div class="wrap">
+      <%= f.submit "〆", class: "button2" %>
+    </div>
+  <% end %>
+<% end %>
+<div calss="text-center">
+  <%= moviemarks.count %>Mark!
+</div>

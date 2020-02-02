@@ -23,6 +23,15 @@
     <td><%= othermovie_comment.rate %></td>
     <td><%= othermovie_comment.created_at.strftime('%Y/%m/%d') %></td>
     <td><%= othermovie_comment.spoiler_status %></td>
-    <td><%= othermovie_comment.comment %></td>
+    <td>
+      <a class="btn btn-default input-color" data-toggle="collapse" href="#collapseExample<%= othermovie_comment.id %>">
+        表示／非表示
+      </a>
+      <div class="collapse" id="collapseExample<%= othermovie_comment.id %>">
+        <div>
+          <%= othermovie_comment.comment %>
+        </div>
+      </div>
+    </td>
   </tr>
 <% end %>

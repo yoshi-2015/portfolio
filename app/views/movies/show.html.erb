@@ -5,12 +5,12 @@
 
   <div class="col-xs-5 text-center responsive">
     <br>
-    <%= image_tag("https://image.tmdb.org/t/p/w342/#{@movie_info['poster_path']}", :alt => 'poster') %>
+    <%= image_tag("https://image.tmdb.org/t/p/w342/#{@poster_info['poster_path']}", :alt => 'poster') %>
   </div>
 
   <div class="col-xs-5 responsive">
 
-    <h1><%= @movie_info['title'] %></h1>
+    <h1 style="font-family: 'Ubuntu Mono', monospace;"><%= @movie_info['title'] %></h1>
 
     <h3 class="text-font" ><strong>原題：</strong><%= @movie_info['original_title'] %></h3>
 
@@ -33,16 +33,42 @@
 
     <br>
 
-    <p>Average Score</p>
-    <h2><%= @average.round(1) %><strong> / 5.0</strong></h2>
-
-    <br>
+    <p class="">Average Score</p>
+    <h2 class=""><%= @average.round(1) %><strong class="mini-font"> / 5.0</strong></h2>
   </div>
 
   <div class="col-xs-1"></div>
 </div>
 
-<div class="row">
+<div class="row bottom">
+  <div class="col-xs-1"></div>
+
+  <div class="col-xs-10">
+    <div class="col-xs-1"></div>
+    <div class="col-xs-2 text-center">
+      <div class="checks_form">
+        <%= render 'movies/check_form', checkjudgment: @checkjudgment, apimovie_id: @apimovie_id , moviechecks: @moviechecks %>
+      </div>
+    </div>
+    <div class="col-xs-2"></div>
+    <div class="col-xs-2 text-center">
+      <div class="marks_form">
+        <%= render 'movies/mark_form', markjudgment: @markjudgment, apimovie_id: @apimovie_id , moviemarks: @moviemarks %>
+      </div>
+    </div>
+    <div class="col-xs-2"></div>
+    <div class="col-xs-2 text-center">
+      <div class="likes_form">
+        <%= render 'movies/like_form', likejudgment: @likejudgment, apimovie_id: @apimovie_id , movielikes: @movielikes %>
+      </div>
+    </div>
+    <div class="col-xs-1"></div>
+  </div>
+
+  <div class="col-xs-1"></div>
+</div>
+
+<div class="row bottom">
   <div class="col-xs-2"></div>
 
   <div class="col-xs-8">
@@ -83,9 +109,9 @@
       <%= f.hidden_field :rate, id: "score" %>
       <br>
       <%= f.hidden_field :movie_id, :value => @movie_info['id'] %>
-      <%= f.text_area :comment, class: "col-xs-12 input-color text-center text_field", size: "10x2", :placeholder => "コメントは　1人1つ500文字　まで " %>
+      <%= f.text_area :comment, class: "col-xs-12 input-color text-center text_field", size: "10x2", :placeholder => "コメントは 『　1人1つ500文字　』　まで " %>
       <div class="col-xs-7 radio_button">
-        ネタバレ：　<%= f.radio_button :spoiler_status, :無 , checked: true %>　無　<%= f.radio_button :spoiler_status, :有 %>　有
+        spoiler?：　<%= f.radio_button :spoiler_status, :no , checked: true %>　no　<%= f.radio_button :spoiler_status, :yes %>　yes
       </div>
       <div class="col-xs-1"></div>
       <%= f.submit "Comment", class: "btn smoothScroll anime_4 col-xs-2" %>
