@@ -1,13 +1,13 @@
 <% if checkjudgment.blank? %>
   <%= form_with url: checks_path do |f| %>
     <%= f.hidden_field :movie_id, :value => apimovie_id %>
-    <div class="wrap">
+    <div class="wrap2">
       <%= f.submit "✔︎", class: "button" %>
     </div>
   <% end %>
 <% else %>
   <%= form_with url: check_path(checkjudgment.first.id), method: (:delete) do |f| %>
-    <div class="wrap">
+    <div class="wrap2">
       <%= f.submit "✔", class: "button2" %>
     </div>
   <% end %>

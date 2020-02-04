@@ -3,3 +3,73 @@
 </div>
 
 <%= render 'users/info', user: @user %>
+
+<div class="row">
+  <div class="col-xs-1"></div>
+
+  <div class="col-xs-10">
+    <div class="wrap">
+      <ul id="tab-menu" class="clearfix">
+        <li>
+          <a href="#tab1" class="active">✔︎<br><%= @user.checks.count %> Check</a>
+        </li>
+        <li><a href="#tab2" class="">〆<br><%= @user.marks.count %> Merk</a></li>
+        <li><a href="#tab3" class="">❤︎<br><%= @user.likes.count %> Like</a></li>
+        <li><a href="#tab4" class="">✒︎<br><%= @user.movie_comments.count %> Comment</a></li>
+      </ul>
+
+      <div id="tab-contents" class="clearfix">
+        <div id="tab1" class="tab">
+          <% @check_movies_info.each do |check_movie| %>
+            <div class="clearfix movies_list text-center">
+              <div>
+                <%= link_to movie_path(check_movie["id"]) do %>
+                  <%= image_tag("https://image.tmdb.org/t/p/w154/#{check_movie['poster_path']}", :alt => 'poster') %>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+
+        <div id="tab2" class="tab">
+          <% @mark_movies_info.each do |mark_movie| %>
+            <div class="clearfix movies_list text-center">
+              <div>
+                <%= link_to movie_path(mark_movie["id"]) do %>
+                  <%= image_tag("https://image.tmdb.org/t/p/w154/#{mark_movie['poster_path']}", :alt => 'poster') %>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+
+        <div id="tab3" class="tab">
+          <% @like_movies_info.each do |like_movie| %>
+            <div class="clearfix movies_list text-center">
+              <div>
+                <%= link_to movie_path(like_movie["id"]) do %>
+                  <%= image_tag("https://image.tmdb.org/t/p/w154/#{like_movie['poster_path']}", :alt => 'poster') %>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+
+        <div id="tab4" class="tab">
+          <% @comment_movies_info.each do |like_movie| %>
+            <div class="clearfix movies_list text-center">
+              <div>
+                <%= link_to movie_path(like_movie["id"]) do %>
+                  <%= image_tag("https://image.tmdb.org/t/p/w154/#{like_movie['poster_path']}", :alt => 'poster') %>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xs-1"></div>
+</div>
