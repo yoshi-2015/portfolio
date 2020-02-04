@@ -6,6 +6,21 @@ class UsersController < ApplicationController
   end
 
   def show
+    @userchecks = Check.where(user_id: @user.id)
+    ary1 = [@id]
+    @ids = ary1.compact
+    @userchecks.each do |check|
+      @id = check.movie_id
+      @ids << @id
+    end
+    ary2 = [@movies]
+    @movies = ary2.compact
+    @ids.each do |movie_id|
+      @movie = movie_id
+      @movie_info = Movie.details(@movie)
+      @movies << @movie_info
+    end
+    # binding.pry
   end
 
   def edit

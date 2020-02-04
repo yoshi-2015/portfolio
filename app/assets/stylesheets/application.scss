@@ -21,6 +21,18 @@
 @import url('https://fonts.googleapis.com/css?family=Sacramento');
 @import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono');
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.clearfix:after{
+  content:"";
+  clear: both;
+  display: block;
+}
+
 /*　共通レイアウト　ここから　*/
 body {
   /*背景レイアウト*/
@@ -281,6 +293,47 @@ h1, h2, h3 {
 }
 /* ハンバーガーメニュー内一覧　ここまで */
 
+/*　mypageタブ　ここから　*/
+.wrap{
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+#tab-menu li {
+  float: left;
+  list-style-type: none;
+  width: 25%;
+}
+
+#tab-menu a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  padding: 20px;
+  text-align: center;
+  background: #000;
+  border: 1px solid #000;
+  border-bottom: none;
+}
+
+#tab-menu .active {
+  background: #fff;
+  color: #000;
+}
+
+#tab-contents .tab {
+  padding: 30px;
+  background: #fff;
+  border: 1px solid #000;
+  border-top: none;
+}
+
+#tab-contents p{
+  color:#000;
+  line-height: 2.5;
+}
+/*　mypageタブ　ここまで　*/
+
 /*　ボタン　レイアウト　ここから　*/
 /*　押して欲しいボタンレイアウト　*/
 .anime {
@@ -371,7 +424,7 @@ h1, h2, h3 {
 
 /*　Check/Merk/Like機能ボタンレイアウト　ここから　*/
 
-.wrap {
+.wrap2 {
   height: 100%;
   display: flex;
   align-items: center;
@@ -514,41 +567,36 @@ footer {
 
   /*　いいね機能用ボタンレイアウト　*/
   .anime_5 {
-  height: 47px;
-  text-align:  center;
-  font-size:  20px;
-  text-decoration: none;
-  color:  #fff;
-  background-color: rgba(0,0,0,0.0);
-  border-radius:  5px;
-  transition: 0.5s;
-}
-
-.anime_5:hover {
-  opacity:  0.9;
-}
-
-.anime_6 {
-  height: 47px;
-  text-align:  center;
-  font-size:  20px;
-  text-decoration: none;
-  color:  red;
-  background-color: rgba(0,0,0,0.0);
-  border-radius:  5px;
-  transition: 0.5s;
-}
-
-.anime_6:hover {
-  opacity:  0.9;
-}
-  /*　ボタン　レイアウト　ここまで　*/
-
-  /*　テーブル枠線レイアウト　ここから　*/
-  .table {
-
+    height: 47px;
+    text-align:  center;
+    font-size:  20px;
+    text-decoration: none;
+    color:  #fff;
+    background-color: rgba(0,0,0,0.0);
+    border-radius:  5px;
+    transition: 0.5s;
   }
-  /*　テーブル枠線　レイアウト　ここまで　*/
+
+
+  .anime_5:hover {
+    opacity:  0.9;
+  }
+
+  .anime_6 {
+    height: 47px;
+    text-align:  center;
+    font-size:  20px;
+    text-decoration: none;
+    color:  red;
+    background-color: rgba(0,0,0,0.0);
+    border-radius:  5px;
+    transition: 0.5s;
+  }
+
+  .anime_6:hover {
+    opacity:  0.9;
+  }
+  /*　ボタン　レイアウト　ここまで　*/
 }
 /*　レスポンシブ対応　ここまで　*/
 
