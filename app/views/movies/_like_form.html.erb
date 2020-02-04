@@ -2,13 +2,17 @@
   <%= form_with url: likes_path do |f| %>
     <%= f.hidden_field :movie_id, :value => apimovie_id %>
     <div class="wrap2">
-      <%= f.submit "❤︎", class: "button" %>
+      <%= button_tag :type => "submit", :class =>"button" do %>
+        <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+      <% end %>
     </div>
   <% end %>
 <% else %>
   <%= form_with url: like_path(likejudgment.first.id), method: (:delete) do |f| %>
     <div class="wrap2">
-      <%= f.submit "❤︎", class: "button2" %>
+      <%= button_tag :type => "submit", :class =>"button2" do %>
+        <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+      <% end %>
     </div>
   <% end %>
 <% end %>
