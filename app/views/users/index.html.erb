@@ -1,22 +1,13 @@
 <div class="row top">
-  <h2 class="text-center">Users</h2>
+  <h2 class="text-center">All users</h2>
 </div>
 
+<%= render 'users/info', user: current_user %>
 
 <div class="row">
   <div class="col-xs-1"></div>
   <div class="col-xs-10">
     <table class="table">
-        <thead>
-          <tr>
-            <th>ユーザー画像</th>
-            <th>お名前</th>
-            <th>フォロー</th>
-            <th>フォロワー</th>
-            <th></th>
-          </tr>
-        </thead>
-
         <tbody>
           <% @users.each do |user| %>
             <tr>
@@ -24,16 +15,15 @@
                 <%= attachment_image_tag user,:profile_image, :fill, 50, 50, format: 'png', fallback: "no_image.jpg", size:'50x50' %>
               </td>
               <td>
-                <%= user.nickname %>
+                <%= link_to user_path(user.id) do %>
+                  <%= user.nickname %>
+                <% end %>
               </td>
               <td>
-                 <%= user.followings.count %>
+                 <%= user.followings.count %> Follows
               </td>
               <td>
-                 <%= user.followers.count %>
-              </td>
-              <td>
-                <%= link_to "詳細", user_path(user.id), class: "btn smoothScroll anime" %>
+                 <%= user.followers.count %> Followers
               </td>
               <td>
               <!-- フォロー -->

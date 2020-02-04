@@ -16,7 +16,7 @@
             <%= link_to "フォローする", user_relationships_path(user.id), method: :post, class: "btn smoothScroll anime" %>
           <% end %>
         <% else %>
-          <%= link_to 'ユーザー情報変更', edit_user_path(user), class: "btn smoothScroll anime" %>
+          <%= link_to 'edit', edit_user_path(user), class: "btn smoothScroll" %>
         <% end %>
     </div>
   </div>
@@ -55,3 +55,5 @@
   </div>
   <div class="col-xs-1"></div>
 </div>
+
+<br>
