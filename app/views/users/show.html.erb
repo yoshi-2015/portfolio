@@ -11,41 +11,62 @@
     <div class="wrap">
       <ul id="tab-menu" class="clearfix">
         <li>
-          <a href="#tab1" class="active"><%= @user.checks.count %><br>Check</a>
+          <a href="#tab1" class="active">✔︎<br><%= @user.checks.count %> Check</a>
         </li>
-        <li><a href="#tab2" class=""><%= @user.marks.count %><br>Merk</a></li>
-        <li><a href="#tab3" class=""><%= @user.likes.count %><br>Like</a></li>
-        <li><a href="#tab4" class=""><%= @user.movie_comments.count %><br>comment</a></li>
+        <li><a href="#tab2" class="">〆<br><%= @user.marks.count %> Merk</a></li>
+        <li><a href="#tab3" class="">❤︎<br><%= @user.likes.count %> Like</a></li>
+        <li><a href="#tab4" class="">✒︎<br><%= @user.movie_comments.count %> Comment</a></li>
       </ul>
 
       <div id="tab-contents" class="clearfix">
-        <div id="tab1" class="tab input-color">
-          <% @movies.each do |movie| %>
+        <div id="tab1" class="tab">
+          <% @check_movies_info.each do |check_movie| %>
             <div class="clearfix movies_list text-center">
               <div>
-                <%= link_to movie_path(movie["id"]) do %>
-                  <%= image_tag("https://image.tmdb.org/t/p/w154/#{movie['poster_path']}", :alt => 'poster') %>
+                <%= link_to movie_path(check_movie["id"]) do %>
+                  <%= image_tag("https://image.tmdb.org/t/p/w154/#{check_movie['poster_path']}", :alt => 'poster') %>
                 <% end %>
               </div>
             </div>
           <% end %>
         </div>
 
-        <div id="tab2" class="tab input-color">
-          <p>TAB2のテキストが入ります。TAB２のテキストが入ります。</p>
-        </div>
-
-        <div id="tab3" class="tab input-color">
-          <p>TAB3のテキストが入ります。TAB３のテキストが入ります。TAB3のテキストが入ります。</p>
-        </div>
-
-        <div id="tab4" class="tab input-color">
-          <% @user.movie_comments.each do |movie_comment| %>
-            <div>
-              <%= movie_comment.comment %>
+        <div id="tab2" class="tab">
+          <% @mark_movies_info.each do |mark_movie| %>
+            <div class="clearfix movies_list text-center">
+              <div>
+                <%= link_to movie_path(mark_movie["id"]) do %>
+                  <%= image_tag("https://image.tmdb.org/t/p/w154/#{mark_movie['poster_path']}", :alt => 'poster') %>
+                <% end %>
+              </div>
             </div>
           <% end %>
         </div>
+
+        <div id="tab3" class="tab">
+          <% @like_movies_info.each do |like_movie| %>
+            <div class="clearfix movies_list text-center">
+              <div>
+                <%= link_to movie_path(like_movie["id"]) do %>
+                  <%= image_tag("https://image.tmdb.org/t/p/w154/#{like_movie['poster_path']}", :alt => 'poster') %>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+
+        <div id="tab4" class="tab">
+          <% @comment_movies_info.each do |like_movie| %>
+            <div class="clearfix movies_list text-center">
+              <div>
+                <%= link_to movie_path(like_movie["id"]) do %>
+                  <%= image_tag("https://image.tmdb.org/t/p/w154/#{like_movie['poster_path']}", :alt => 'poster') %>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+
       </div>
     </div>
   </div>
