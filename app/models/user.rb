@@ -4,6 +4,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  validates :nickname,
+  uniqueness: { case_sensitive: :false },
+  length: { minimum: 4, maximum: 20 }
+
+  validates :introduction, length: { maximum: 120 }
+
   # アソシエーション
   #　今回は1:Nにおいて、1が削除されたら関連するNも削除
   has_many :movie_comments, dependent: :destroy
