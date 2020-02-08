@@ -10,7 +10,7 @@
 
   <div class="col-xs-5 responsive">
 
-    <h1 style="font-family: 'Ubuntu Mono', monospace;"><%= @movie_info['title'] %></h1>
+    <h1 class="text-font"><%= @movie_info['title'] %></h1>
 
     <h3 class="text-font" ><strong>原題：</strong><%= @movie_info['original_title'] %></h3>
 
@@ -29,7 +29,7 @@
       <% end %>
     </p>
 
-    <p><strong>ストーリー：</strong><%= @movie_info['overview'] %></p>
+    <p class="text-font"><strong>ストーリー：</strong><%= @movie_info['overview'] %></p>
 
     <br>
 
@@ -86,8 +86,8 @@
           <div>
             <tr>
               <td><%= image_tag("https://image.tmdb.org/t/p/w92/#{cast["profile_path"]}") %></td>
-              <td><h3><%= cast['name'] %></h3></td>
-              <td><h3><%= cast['character'] %></h3></td>
+              <td><h3 class="text-font"><%= cast['name'] %></h3></td>
+              <td><h3 class="text-font"><%= cast['character'] %></h3></td>
             </tr>
           </div>
         <% end %>
@@ -112,7 +112,7 @@
       <%= f.hidden_field :movie_id, :value => @movie_info['id'] %>
       <%= f.text_area :comment, class: "col-xs-12 input-color text-center text_field", size: "10x2", :placeholder => "コメントは 『　1人1つ500文字　』　まで " %>
       <div class="col-xs-7 radio_button">
-        spoiler?：　<%= f.radio_button :spoiler_status, :no , checked: true %>　no　<%= f.radio_button :spoiler_status, :yes %>　yes
+        ネタバレは?：　<%= f.radio_button :spoiler_status, :no , checked: true %>　no　<%= f.radio_button :spoiler_status, :yes %>　yes
       </div>
       <div class="col-xs-1"></div>
       <%= button_tag :type => "submit", :class =>"btn smoothScroll anime_4 col-xs-2" do %>

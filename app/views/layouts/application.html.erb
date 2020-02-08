@@ -20,28 +20,28 @@
         <!-- 遷移先をusers_pathに固定中 -->
           <% if user_signed_in? %>
             <li class="">
-              <%= link_to users_path do %>
+              <%= link_to root_path do %>
                 <span class="glyphicon glyphicon-th" aria-hidden="true"></span> TOP
               <% end %>
             </li>
             <li class="">
               <%= link_to user_path(current_user.id) do %>
-                <span class="glyphicon glyphicon-home" aria-hidden="true"></span> マイページ
+                <span class="glyphicon glyphicon-home" aria-hidden="true"></span> my page
               <% end %>
             </li>
             <li class="">
               <%= link_to users_path do %>
-                <span class="glyphicon glyphicon-user" aria-hidden="true"></span> ユーザー
+                <span class="glyphicon glyphicon-user" aria-hidden="true"></span> users
               <% end %>
             </li>
             <li class="">
               <%= link_to movies_path do %>
-                <span class="glyphicon glyphicon-search" aria-hidden="true"></span> 映画サーチ
+                <span class="glyphicon glyphicon-search" aria-hidden="true"></span> movie search
               <% end %>
             </li>
             <li class="">
               <%= link_to destroy_user_session_path, method: :delete do %>
-                <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> ログアウト
+                <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> log out
               <% end %>
             </li>
             <li class="input-color">
@@ -55,23 +55,18 @@
           <!-- 遷移先をnew_user_session_pathに固定中 -->
           <% else %>
             <li class="">
-              <%= link_to new_user_session_path do %>
+              <%= link_to root_path do %>
                 <span class="glyphicon glyphicon-th" aria-hidden="true"></span> TOP
               <% end %>
             </li>
             <li class="">
-              <%= link_to new_user_session_path do %>
-                <span class="glyphicon glyphicon-link" aria-hidden="true"></span> サイト紹介
-              <% end %>
-            </li>
-            <li class="">
               <%= link_to new_user_registration_path do %>
-                <span class="glyphicon glyphicon-check" aria-hidden="true"></span> 新規登録
+                <span class="glyphicon glyphicon-check" aria-hidden="true"></span> sign_up
               <% end %>
             </li>
             <li class="">
               <%= link_to new_user_session_path do %>
-                <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>  ログイン
+                <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>  log in
               <% end %>
             </li>
           <% end %>

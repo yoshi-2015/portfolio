@@ -1,43 +1,32 @@
 <div class="row top">
   <h2 class="text-center">Followers</h2>
+</div>
 
+<%= render 'users/info', user: @user %>
+
+<div class="row top">
   <div class="col-xs-1"></div>
 
-  <div class="col-xs-3">
-    <%= render 'users/info', user: @user %>
-  </div>
-
-  <div class="col-xs-7">
+  <div class="col-xs-10">
     <table class="table">
-      <thead>
-        <tr>
-          <th>ユーザー画像</th>
-          <th>お名前</th>
-          <th>フォロー</th>
-          <th>フォロワー</th>
-          <th></th>
-        </tr>
-      </thead>
-
       <tbody>
         <% @followers_users.each do |user| %>
           <tr>
-            <td>
+            <td class="col-xs-2">
               <%= attachment_image_tag user,:profile_image, :fill, 50, 50, format: 'png', fallback: "no_image.jpg", size:'50x50' %>
             </td>
-            <td>
-              <%= user.nickname %>
+            <td class="col-xs-5">
+              <%= link_to user_path(user.id) do %>
+                <%= user.nickname %>
+              <% end %>
             </td>
-            <td>
-              <%= user.followings.count %>
+            <td class="col-xs-1">
+              <%= user.followings.count %> Follows
             </td>
-            <td>
-              <%= user.followers.count %>
+            <td class="col-xs-1">
+              <%= user.followers.count %> Followers
             </td>
-            <td>
-              <%= link_to "詳細", user_path(user.id), class: "btn smoothScroll anime" %>
-            </td>
-            <td>
+            <td class="col-xs-3">
             <!-- フォロー -->
             <% if current_user != user %>
               <% if user.followed_by?(current_user) %>
