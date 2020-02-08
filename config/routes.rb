@@ -15,5 +15,5 @@ Rails.application.routes.draw do
   resources :marks, only: [:create, :destroy]
   resources :likes, only: [:create, :destroy]
 
-  root to: 'movies#index'
+  root to: 'movies#top'
 end

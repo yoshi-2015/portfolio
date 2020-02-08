@@ -1,0 +1,280 @@
+<h1 class="text-center">Cinematic Records</h1>
+
+<div class="row top">
+  <div class="col-xs-1"></div>
+
+  <div class="col-xs-10">
+    <div class="top-image">
+      <div id="theTarget">
+        <div class="image1 text-center">
+          <br>
+          <h1 class="text-font">Welcome</h1>
+          <p>Let's Sign up!</p>
+          <p>さあ、登録をしてみましょう!</p>
+          <div class="wrap2">
+            <%= link_to new_user_registration_path do %>
+              <div class="button">
+                <span class="fontop glyphicon glyphicon-log-in" aria-hidden="true"></span>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <div class="image2 text-center">
+          <br>
+          <h1 class="text-font">FInd Movie</h1>
+          <p>You can find the movie you want to watch now.</p>
+          <p>あなたが観たい映画が、きっと見つかる。</p>
+          <div class="wrap2">
+            <%= link_to new_user_registration_path do %>
+              <div class="button">
+                <span class="fontop glyphicon glyphicon-log-in" aria-hidden="true"></span>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <div class="image3 text-center">
+          <br>
+          <h1 class="text-font">Post Comment</h1>
+          <p>If you watch a movie, post your thoughts.</p>
+          <p>映画を見たら、感想を投稿しましょう。</p>
+          <div class="wrap2">
+            <%= link_to new_user_registration_path do %>
+              <div class="button">
+                <span class="fontop glyphicon glyphicon-log-in" aria-hidden="true"></span>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <div class="image4 text-center">
+          <br>
+          <h1 class="text-font">Follow User</h1>
+          <p>Connect with your movie lover.</p>
+          <p>同じカテゴリーが好きな仲間をフォローできます!</p>
+          <div class="wrap2">
+            <%= link_to new_user_registration_path do %>
+              <div class="button">
+                <span class="fontop glyphicon glyphicon-log-in" aria-hidden="true"></span>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xs-1"></div>
+</div>
+
+<div class="row top">
+  <div class="col-xs-1"></div>
+
+  <div class="col-xs-10 text-center">
+    <h1 class="text-font">What is a Cinematic Records?</h1>
+    <br>
+    <p>ようこそ、『Cinematic Records』（以下『CR』）へ！</p>
+    <br>
+    <p>当サイトでは、多種多様な映画情報を取り揃えております。</p>
+    <br>
+    <p>お客様は、その映画情報を <span style="color: #2EE59D;">「探したり」「リストに入れたり」「感想を投稿したり」</span> することができます。</p>
+    <br>
+    <p>まずは、1つ1つサイトのご利用方法をご紹介いたします。</p>
+    <br>
+    <p>※尚、ご利用には一部会員登録が必要となります。ご了承くださいませ。※</p>
+  </div>
+
+  <div class="col-xs-1"></div>
+</div>
+
+<div class="row top">
+  <div class="col-xs-1"></div>
+
+  <div class="col-xs-10 text-center">
+    <h1 class="text-font">Find</h1>
+    <br>
+    <p>まずは、どのような映画があるのか、どんな映画を見たいのか「movie_search」をしてみましょう。</p>
+    <br>
+    <p>基本的には、 <span style="color: #2EE59D;">「映画タイトル」での検索</span> となります。</p>
+    <br>
+    <p>※機能拡張により、検索方法の追加がある場合がございます。※</p>
+    <br>
+    <p>もし、探したい映画がなくてもご安心ください。最新映画情報から気になる作品を心ゆくまでお探しくださいませ。</p>
+    <br>
+
+    <h3 class="text-center">Now Playing Movie</h3>
+    <div>
+      <% @new_movie_info.first(3).each do |nowmovie| %>
+        <div class="clearfix movies_list text-center">
+          <div>
+            <%= image_tag("https://image.tmdb.org/t/p/w300/#{nowmovie["poster_path"]}", :alt => 'poster') %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <p>※最新作より、3作品をピックアップしております。※</p>
+  </div>
+
+  <div class="col-xs-1"></div>
+</div>
+
+<div class="row top">
+  <div class="col-xs-1"></div>
+
+  <div class="col-xs-10 text-center">
+    <h1 class="text-font">Check! / Mark! / Like!</h1>
+    <br>
+    <p>探した映画を Check! / Mark! / Like! の3種類でリスト化することができます。</p>
+    <br>
+    <div class="col-xs-4">
+      <h3><span class="text-font" style="color: #2EE59D;">Check!</span></h3>
+      <p>まだ観たことのない映画を Check!</p>
+      <div class="wrap2">
+        <div class="button">
+          <span class="fontop glyphicon glyphicon-ok" aria-hidden="true"></span>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-4">
+      <h3><span class="text-font" style="color: #2EE59D;">Mark!</span></h3>
+      <p>観たことのある映画は Mark! しましょう。</p>
+      <div class="wrap2">
+        <div class="button">
+          <span class="fontop glyphicon glyphicon-tag" aria-hidden="true"></span>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-4">
+      <h3><span class="text-font" style="color: #2EE59D;">Like!</span></h3>
+      <p>心に残る大切な映画は Like! で登録!</p>
+      <div class="wrap2">
+        <div class="button">
+          <span class="fontop glyphicon glyphicon-heart" aria-hidden="true"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xs-1"></div>
+</div>
+
+<div class="row top">
+  <div class="col-xs-1"></div>
+
+  <div class="col-xs-10 text-center">
+    <h1 class="text-font">Comment / Score</h1>
+    <br>
+    <p>鑑賞した映画の感想をコメントとして投稿しましょう!</p>
+    <br>
+    <p>
+      コメントは <span class="text-font" style="color: #2EE59D;">1つの映画につき、1ユーザー1つまで</span> となっており、500文字までとなります。
+    </p>
+    <br>
+    <p>また、編集や削除をすることもできますので、観るたびに感想が変化する様子をお楽しみください。</p>
+    <br>
+
+    <div>
+      <%= hidden_field_tag 'comment_array', @new_movie_comments.first(3).pluck(:id) %>
+      <% @new_movie_comments.first(3).each do |new_movie_comment| %>
+        <div class="col-xs-4 movies_list text-center">
+          <div>
+            User: <%= new_movie_comment.user.nickname %>
+          </div>
+          <div>
+            Comment: <%= new_movie_comment.comment %>
+          </div>
+          <div>
+            <div id="rateYo-<%= new_movie_comment.id %>"  data-star="<%= new_movie_comment.rate %>" class="margin-center"></div>
+            <%= new_movie_comment.rate %>
+          </div>
+          <br>
+        </div>
+      <% end %>
+    </div>
+    <p>※最新コメントより、3つをピックアップしております。※</p>
+  </div>
+
+  <div class="col-xs-1"></div>
+</div>
+
+<div class="row top">
+  <div class="col-xs-1"></div>
+
+  <div class="col-xs-10 text-center">
+    <h1 class="text-font">Follow / Follower</h1>
+    <br>
+    <p>当サイト『CR』では、<span class="text-font" style="color: #2EE59D;">ご利用いただいている様々な会員様をフォロー</span>することができます。</p>
+    <br>
+    <p>ご自身のお好きな映画を登録しているユーザーをフォローすることで、新たな映画に出会えるきっかけとなるでしょう。</p>
+    <br>
+    <p>※機能拡張により、User機能/Follow機能の新規機能追加がある場合がございます。※</p>
+  </div>
+
+  <div class="col-xs-1"></div>
+</div>
+
+<div class="row top">
+  <div class="col-xs-1"></div>
+
+  <div class="col-xs-10 text-center">
+    <h1 class="text-font">Let's Sign up!</h1>
+    <div class="wrap2">
+      <%= link_to new_user_registration_path do %>
+        <div class="button">
+          <span class="fontop glyphicon glyphicon-log-in" aria-hidden="true"></span>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-xs-1"></div>
+</div>
+
+<div class="row top"></div>
+
+<div class="row top">
+  <div class="col-xs-2"></div>
+
+  <div class="col-xs-8 well input-color">
+    <h1 class="text-font text-center">About</h1>
+    <p class="text-font">
+      本ウェブサイトは、就職活動用に企画/開発した作品です。
+      <br>
+      <br>
+      ~個人情報の利用目的~
+      <br>
+      本ウェブサイトでは、偽物のユーザ名とメールアドレスを使っても会員登録できるようになっております。
+      <br>
+      メールアドレスは会員登録/ログインの目的以外では利用いたしません。
+      <br>
+      <br>
+      ~個人情報の第三者への開示・提供の禁止~
+      <br>
+      本ウェブサイトでは、個人情報を適切に管理し、次のいずれかに該当する場合を除き、個人情報を第三者に開示いたしません。
+      <br>
+      ・お客さまの同意がある場合
+      <br>
+      ・法令に基づき開示することが必要である場合
+      <br>
+      ・個人情報の安全対策
+      <br>
+      ・本ウェブサイトは個人の試作品とはいえ、個人情報の正確性及び安全性確保のために、
+      <br>
+      　セキュリティ対策に関してはできる限り努力をしております。
+      <br>
+      <br>
+      ~ご本人の照会~
+      <br>
+      お客さまがご本人の個人情報の照会・修正・削除などをご希望される場合には、
+      <br>
+      ご本人であることを確認の上、対応させていただきます。
+      <br>
+      <br>
+      ~法令、規範の遵守と見直し~
+      <br>
+      本ウェブサイトの製作者は、保有する個人情報に関して適用される日本の法令、
+      <br>
+      その他規範を遵守するとともに、本ポリシーの内容を適宜見直し、その改善に努めます。
+      <br>
+    </p>
+  </div>
+
+  <div class="col-xs-2"></div>
+</div>

@@ -1,4 +1,9 @@
 class MoviesController < ApplicationController
+  def top
+    @new_movie_info = Movie.newdetails(params[:id])["results"]
+    @new_movie_comments = MovieComment.all.order(created_at: :desc)
+  end
+
   def index
     @search_term = params[:looking_for]
     @movie_results = Movie.search(@search_term)["results"]
