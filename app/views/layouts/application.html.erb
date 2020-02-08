@@ -55,13 +55,8 @@
           <!-- 遷移先をnew_user_session_pathに固定中 -->
           <% else %>
             <li class="">
-              <%= link_to new_user_session_path do %>
+              <%= link_to root_path do %>
                 <span class="glyphicon glyphicon-th" aria-hidden="true"></span> TOP
-              <% end %>
-            </li>
-            <li class="">
-              <%= link_to new_user_session_path do %>
-                <span class="glyphicon glyphicon-link" aria-hidden="true"></span> introduction
               <% end %>
             </li>
             <li class="">

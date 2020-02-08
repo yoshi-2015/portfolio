@@ -1,3 +1,4 @@
+// post
 $(function () {
 
   $("#rateYo").rateYo({
@@ -16,16 +17,18 @@ $("#rateYo").rateYo("option", "onSet", function () {
     console.log("This is a new function");
 });
 
-$(function () {
-  comment_array = $('#comment_array').val().split('');
-  $.each(comment_array, function(index, value) {
-    $(function () {
-      $('#rateYo-' + value).rateYo({
-        starWidth: "20px",
-        rating: Number($("#rateYo-" + value).data('star')),
-        halfStar: true,
-        readOnly: true
-      });
-    });
-  })
-})
+// top
+
+  // $(function () {
+  //   comment_array = $('#comment_array').val().split('');
+  //   $.each(comment_array, function(index, value) {
+  //     $(function () {
+  //       $('#rateYo-' + value).rateYo({
+  //         starWidth: "20px",
+  //         rating: Number($("#rateYo-" + value).data('star')),
+  //         halfStar: true,
+  //         readOnly: true
+  //       });
+  //     });
+  //   })
+  // })

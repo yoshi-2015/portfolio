@@ -172,18 +172,18 @@
     <br>
 
     <div>
-      <%= hidden_field_tag 'comment_array', @new_movie_comments.first(3).pluck(:id) %>
+       <!-- hidden_field_tag 'comment_array', @new_movie_comments.first(3).pluck(:id) %> -->
       <% @new_movie_comments.first(3).each do |new_movie_comment| %>
         <div class="col-xs-4 movies_list text-center">
           <div>
-            User: <%= new_movie_comment.user.nickname %>
+            <h3 class="text-font">User: <%= new_movie_comment.user.nickname %></h3>
           </div>
           <div>
-            Comment: <%= new_movie_comment.comment %>
+            <h3 class="text-font">Comment: <%= new_movie_comment.comment %></h3>
           </div>
           <div>
-            <div id="rateYo-<%= new_movie_comment.id %>"  data-star="<%= new_movie_comment.rate %>" class="margin-center"></div>
-            <%= new_movie_comment.rate %>
+            <!-- <div id="rateYo-<%= new_movie_comment.id %>"  data-star="<%= new_movie_comment.rate %>" class="margin-center"></div> -->
+            <h3 class="text-font"><%= new_movie_comment.rate %><strong class="mini-font"> / 5.0</strong>
           </div>
           <br>
         </div>
