@@ -9,6 +9,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag('favicon.ico') %>
   </head>
 
   <body>
@@ -17,7 +18,6 @@
         <h1 class="text-center", style="color:#CC3300;">Cinematic Records</h1>
         <ul style="padding: 0;">
         <!-- ログインしていたら　ここから -->
-        <!-- 遷移先をusers_pathに固定中 -->
           <% if user_signed_in? %>
             <li class="">
               <%= link_to root_path do %>
@@ -52,7 +52,6 @@
             </li>
           <!-- ログインしていたら　ここまで -->
           <!-- ログインしていなかったら　ここから -->
-          <!-- 遷移先をnew_user_session_pathに固定中 -->
           <% else %>
             <li class="">
               <%= link_to root_path do %>
@@ -92,7 +91,7 @@
       </span>
 
       <footer>
-        <p>映画をもっと、楽しく。</p>
+        <p>映画をもっと、身近に。</p>
         <br>
         <p>© Cinematic Records INC. ALL RIGHTS RESERVED.</p>
       </footer>
