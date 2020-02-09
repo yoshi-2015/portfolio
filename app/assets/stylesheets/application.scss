@@ -38,6 +38,7 @@ body {
   /*背景レイアウト*/
   /*background-image: url(/assets/film.jpg);*/
   background-image: image-url("film.jpg");
+  /*background-color: red;*/
   background-position: center;
   background-size: cover;
   color: #fff;
@@ -415,6 +416,10 @@ a {
 
 /*　movieコメント用ボタンレイアウト　*/
 /*　コメントボタン　ここから　*/
+.cnt_area.cnt_danger{
+  color: #FF0000;
+}
+
 .anime_4 {
   height: 47px;
   text-align:  center;

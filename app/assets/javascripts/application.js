@@ -77,3 +77,43 @@ $(document).ready(function () {
       hidePrevious : false
   });
 });
+
+
+$(function() {
+  $('#tab-contents .tab[id != "tab1"]').hide();
+
+  $('#tab-menu a').on('click', function() {
+    $("#tab-contents .tab").hide();
+    $("#tab-menu .active").removeClass("active");
+    $(this).addClass("active");
+    $($(this).attr("href")).show();
+    return false;
+  });
+});
+
+$(function() {
+    //入力時のイベント
+    $('.sample').on('input', function(){
+        //文字数を取得
+        var cnt = $(this).val().length;
+        //現在の文字数を表示
+        $('.now_cnt').text(cnt);
+        if( 500 > cnt){
+            //500文字以内の場合はボタンを有効化＆黒字
+            $('.sample_btn').prop('disabled', false);
+            $('.cnt_area').removeClass('cnt_danger');
+        }else{
+            //500文字を超える場合はボタンを無効化＆赤字
+            $('.sample_btn').prop('disabled', true);
+            $('.cnt_area').addClass('cnt_danger');
+        }
+    });
+
+    //リロード時に初期文字列が入っていた時の対策
+    $('.sample').trigger('input');
+
+    //ボタンクリック時　実運用時はsubmit送信などを行うと思います
+    $('.sample_btn').click(function(){
+        alert('コメントは1人1つまで！');
+    });
+});
