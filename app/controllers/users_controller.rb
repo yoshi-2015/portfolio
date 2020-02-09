@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   # ユーザーを探す定義をonlyで制限
   before_action :set_user, only: [:show, :edit, :update]
+  before_action :authenticate_user!, only: [:index, :show, :edit, :update, :follows, :followers]
   def index
     @users = User.all
   end
