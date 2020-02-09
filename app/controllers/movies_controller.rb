@@ -1,4 +1,5 @@
 class MoviesController < ApplicationController
+  before_action :authenticate_user!, only: [:index, :show]
   def top
     @new_movie_info = Movie.newdetails(params[:id])["results"]
     @new_movie_comments = MovieComment.all.order(created_at: :desc)

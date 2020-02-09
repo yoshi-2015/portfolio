@@ -4,43 +4,34 @@
 
 <%= render 'users/info', user: @user %>
 
-<div class="row top">
+<div class="row">
   <div class="col-xs-1"></div>
 
   <div class="col-xs-10">
-    <table class="table">
-      <tbody>
-        <% @followers_users.each do |user| %>
-          <tr>
-            <td class="col-xs-2">
-              <%= attachment_image_tag user,:profile_image, :fill, 50, 50, format: 'png', fallback: "no_image.jpg", size:'50x50' %>
-            </td>
-            <td class="col-xs-5">
-              <%= link_to user_path(user.id) do %>
-                <%= user.nickname %>
-              <% end %>
-            </td>
-            <td class="col-xs-1">
-              <%= user.followings.count %> Follows
-            </td>
-            <td class="col-xs-1">
-              <%= user.followers.count %> Followers
-            </td>
-            <td class="col-xs-3">
-            <!-- フォロー -->
-            <% if current_user != user %>
-              <% if user.followed_by?(current_user) %>
-                  <%=link_to "フォロー解除", user_relationships_path(user.id), method: :delete, class: "btn smoothScroll anime_2" %>
-              <% else %>
-                  <%=link_to "フォローする", user_relationships_path(user.id), method: :post, class: "btn smoothScroll anime" %>
-              <% end %>
-            <% end %>
-            <!-- フォロー -->
-            </td>
-          </tr>
+    <h2 class="text-center">Users</h2>
+    <% @followers_users.each do |user| %>
+      <div class="text-center col-xs-12">
+        <%= attachment_image_tag user,:profile_image, :fill, 50, 50, format: 'png', fallback: "no_image.jpg", size:'50x50' %>
+        <%= link_to user_path(user.id) do %>
+          <%= user.nickname %>
         <% end %>
-      </tbody>
-    </table>
+      </div>
+      <div class="text-center col-xs-6">
+        <%= user.followings.count %> Follows
+      </div>
+      <div class="text-center col-xs-6">
+        <%= user.followers.count %> Followers
+      </div>
+      <div class="text-center col-xs-12 bottom">
+        <% if current_user != user %>
+          <% if user.followed_by?(current_user) %>
+              <%=link_to "not Follow", user_relationships_path(user.id), method: :delete, class: "btn smoothScroll anime_2" %>
+          <% else %>
+              <%=link_to "Follow", user_relationships_path(user.id), method: :post, class: "btn smoothScroll anime" %>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 
   <div class="col-xs-1"></div>
