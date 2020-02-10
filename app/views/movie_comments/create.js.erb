@@ -1,3 +1,4 @@
-$('.comments_index').html("<%= j(render 'movies/comment', mymovie_comment: @mymovie_comment, othermovie_comments: @othermovie_comments) %>");
+$('.comments_index1').html("<%= j(render 'movies/mycomment', mymovie_comment: @mymovie_comment) %>");
+$('.comments_index2').html("<%= j(render 'movies/othercomment', othermovie_comments: @othermovie_comments) %>");
 $(".text_field").val("");
 $('.average_score').html("<%= j(render 'movies/average_score', average: @average) %>");

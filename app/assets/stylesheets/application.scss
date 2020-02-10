@@ -46,8 +46,9 @@ body {
   font-family: 'Ubuntu Mono', monospace;
 }
 
-h1, h2, h3 {
+h1, h2 {
   font-family: 'Sacramento', cursive;
+  font-size: 40px;
 }
 
 a {
@@ -108,21 +109,23 @@ a {
 /*　top画面　レイアウト　ここまで　*/
 
 /*　テーブル枠線レイアウト　ここから　*/
+
+.well {
+  background-color: #000;
+}
+.table-data {
+  overflow-wrap: break-word;
+}
+
 .table > thead > tr > th, .table > thead > tr > td,
 .table > tbody > tr > th, .table > tbody > tr > td,
 .table > tfoot > tr > th, .table > tfoot > tr > td
 {
   border-style:none;
   text-align: center;
+  font-size: 15px;
 }
 
-.alt-table-responsive {
-  width: 100%;
-  overflow-y: hidden;
-  overflow-x: auto;
-  -ms-overflow-style: -ms-autohiding-scrollbar;
-  -webkit-overflow-scrolling: touch;
-}
 /*　テーブル枠線　レイアウト　ここまで　*/
 
 /*　user-image　レイアウト　ここから　*/
@@ -177,127 +180,20 @@ a {
 /*　ハンバーガーメニュー　レイアウト　ここまで　*/
 
 /*　ハンバーガーメニュー　アクション　ここから　*/
-.menu-trigger span:nth-of-type(1) {
-  -webkit-animation: menu-bar01 .75s forwards;
-  animation: menu-bar01 .75s forwards;
+.menu-trigger.active {
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
 }
-
-@-webkit-keyframes menu-bar01 {
-  0% {
-    -webkit-transform: translateY(20px) rotate(45deg);
-  }
-  50% {
-    -webkit-transform: translateY(20px) rotate(0);
-  }
-  100% {
-    -webkit-transform: translateY(0) rotate(0);
-  }
-}
-
-@keyframes menu-bar01 {
-  0% {
-    transform: translateY(20px) rotate(45deg);
-  }
-  50% {
-    transform: translateY(20px) rotate(0);
-  }
-  100% {
-    transform: translateY(0) rotate(0);
-  }
-}
-
-.menu-trigger span:nth-of-type(2) {
-  transition: all .25s .25s;
-  opacity: 1;
-}
-
-.menu-trigger span:nth-of-type(3) {
-  -webkit-animation: menu-bar02 .75s forwards;
-  animation: menu-bar02 .75s forwards;
-  }
-  @-webkit-keyframes menu-bar02 {
-  0% {
-    -webkit-transform: translateY(-20px) rotate(-45deg);
-  }
-  50% {
-    -webkit-transform: translateY(-20px) rotate(0);
-  }
-  100% {
-    -webkit-transform: translateY(0) rotate(0);
-  }
-}
-
-@keyframes menu-bar02 {
-  0% {
-    transform: translateY(-20px) rotate(-45deg);
-  }
-  50% {
-    transform: translateY(-20px) rotate(0);
-  }
-  100% {
-    transform: translateY(0) rotate(0);
-  }
-}
-
 .menu-trigger.active span:nth-of-type(1) {
-  -webkit-animation: active-menu-bar01 .75s forwards;
-  animation: active-menu-bar01 .75s forwards;
-  }
-  @-webkit-keyframes active-menu-bar01 {
-  0% {
-    -webkit-transform: translateY(0) rotate(0);
-  }
-  50% {
-    -webkit-transform: translateY(20px) rotate(0);
-  }
-  100% {
-    -webkit-transform: translateY(20px) rotate(45deg);
-  }
+  -webkit-transform: translateY(20px) rotate(-45deg);
+  transform: translateY(20px) rotate(-45deg);
 }
-
-@keyframes active-menu-bar01 {
-  0% {
-    transform: translateY(0) rotate(0);
-  }
-  50% {
-    transform: translateY(20px) rotate(0);
-  }
-  100% {
-    transform: translateY(20px) rotate(45deg);
-  }
-}
-
 .menu-trigger.active span:nth-of-type(2) {
-  opacity: 0;
+  -webkit-transform: translateY(0) rotate(45deg);
+  transform: translateY(0) rotate(45deg);
 }
-
 .menu-trigger.active span:nth-of-type(3) {
-  -webkit-animation: active-menu-bar03 .75s forwards;
-  animation: active-menu-bar03 .75s forwards;
-}
-
-@-webkit-keyframes active-menu-bar03 {
-  0% {
-    -webkit-transform: translateY(0) rotate(0);
-  }
-  50% {
-    -webkit-transform: translateY(-20px) rotate(0);
-  }
-  100% {
-    -webkit-transform: translateY(-20px) rotate(-45deg);
-  }
-}
-
-@keyframes active-menu-bar03 {
-  0% {
-    transform: translateY(0) rotate(0);
-  }
-  50% {
-    transform: translateY(-20px) rotate(0);
-  }
-  100% {
-    transform: translateY(-20px) rotate(-45deg);
-  }
+  opacity: 0;
 }
 /*　ハンバーガーメニュー　アクション　ここまで　*/
 
@@ -314,6 +210,7 @@ a {
 }
 
 #sp-menu li{
+  font-size: 18px;
   text-align: center;
   margin: 30px 0;
   list-style: none;
@@ -422,6 +319,7 @@ a {
 
 .anime_4 {
   height: 47px;
+  width: 50px;
   text-align:  center;
   font-size:  15px;
   text-decoration: none;
@@ -442,6 +340,16 @@ a {
   color: #FF6600;
 }
 /*　コメントボタン　ここまで　*/
+
+/*　コメント　ステータスレイアウト　ここから　*/
+.comment_status_main {
+  font-size: 20px;
+}
+
+.comment_status_sub {
+  font-size: 10px;
+}
+/*　コメント　ステータスレイアウト　ここまで　*/
 
 /*　movie show ラジオボタンレイアウト　ここから　*/
 .radio_button {
@@ -543,6 +451,8 @@ footer {
 /*　footer　レイアウト　ここまで */
 
 
+
+
 /*　レスポンシブ対応　ここから　*/
 @media screen and (max-width:992px) {
   body {
@@ -573,7 +483,7 @@ footer {
   left: 0;
   width: 100%;
   height: 4px;
-  background-color: #3366FF;
+  background-color: #fff;
   border-radius: 4px;
   }
 
@@ -621,7 +531,7 @@ footer {
 
   /*　movieコメント用ボタンレイアウト　*/
   .anime_4 {
-    width: 100px;
+    width: 50px;
     text-align:  center;
     font-size:  15px;
     text-decoration: none;

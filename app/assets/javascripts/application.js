@@ -56,7 +56,7 @@ $(function() {
 $(document).ready(function () {
   $("#theTarget").skippr({
       // スライドショーの変化 ("fade" or "slide")
-      transition : 'fade',
+      transition : "fade",
       // 変化に係る時間(ミリ秒)
       speed : 950,
       // easingの種類
@@ -64,7 +64,7 @@ $(document).ready(function () {
       // ナビゲーションの形("block" or "bubble")
       navType : false,
       // 子要素の種類("div" or "img")
-      childrenElementType : 'div',
+      childrenElementType : "div",
       // ナビゲーション矢印の表示(trueで表示)
       arrows : true,
       // スライドショーの自動再生(falseで自動再生なし)
@@ -78,7 +78,7 @@ $(document).ready(function () {
   });
 });
 
-
+// マイページのたぶ
 $(function() {
   $('#tab-contents .tab[id != "tab1"]').hide();
 
@@ -91,6 +91,7 @@ $(function() {
   });
 });
 
+// コメント時のフォントカウント
 $(function() {
     //入力時のイベント
     $('.sample').on('input', function(){
