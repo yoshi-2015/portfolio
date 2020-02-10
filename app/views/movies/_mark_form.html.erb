@@ -3,7 +3,7 @@
     <%= f.hidden_field :movie_id, :value => apimovie_id %>
     <div class="wrap2">
       <%= button_tag :type => "submit", :class =>"button" do %>
-        <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
+        <span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span>
       <% end %>
     </div>
   <% end %>
@@ -11,7 +11,7 @@
   <%= form_with url: mark_path(markjudgment.first.id), method: (:delete) do |f| %>
     <div class="wrap2">
       <%= button_tag :type => "submit", :class =>"button2" do %>
-        <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
+        <span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span>
       <% end %>
     </div>
   <% end %>

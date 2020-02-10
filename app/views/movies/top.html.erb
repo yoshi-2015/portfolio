@@ -79,7 +79,7 @@
     <br>
     <p>まずは、1つ1つサイトのご利用方法をご紹介いたします。</p>
     <br>
-    <p>※尚、ご利用には一部会員登録が必要となります。ご了承くださいませ。※</p>
+    <p>※尚、ご利用には<span style="color: #2EE59D;">一部会員登録が必要</span>となります。ご了承くださいませ。※</p>
   </div>
 
   <div class="col-xs-1"></div>
@@ -105,51 +105,54 @@
       <% @new_movie_info.first(3).each do |nowmovie| %>
         <div class="clearfix movies_list text-center">
           <div>
-            <%= image_tag("https://image.tmdb.org/t/p/w300/#{nowmovie["poster_path"]}", :alt => 'poster') %>
+            <%= image_tag("https://image.tmdb.org/t/p/w185/#{nowmovie["poster_path"]}", :alt => 'poster') %>
           </div>
         </div>
       <% end %>
     </div>
-    <p>※最新作より、3作品をピックアップしております。※</p>
   </div>
 
   <div class="col-xs-1"></div>
 </div>
 
+<p class="text-center">※最新作より、3作品をピックアップしております。※</p>
+
 <div class="row top">
   <div class="col-xs-1"></div>
 
   <div class="col-xs-10 text-center">
-    <h1 class="text-font">Check! / Mark! / Like!</h1>
+    <h1 class="text-font">Check!</h1>
+    <h1 class="text-font">Mark!</h1>
+    <h1 class="text-font">Like!</h1>
     <br>
     <p>探した映画を Check! / Mark! / Like! の3種類でリスト化することができます。</p>
     <br>
     <div class="col-xs-4">
       <h3><span class="text-font" style="color: #2EE59D;">Check!</span></h3>
-      <p>まだ観たことのない映画を Check!</p>
-      <div class="wrap2">
+      <div class="top wrap2">
         <div class="button">
           <span class="fontop glyphicon glyphicon-ok" aria-hidden="true"></span>
         </div>
       </div>
+      <p class="top">まだ観たことのない映画を Check!</p>
     </div>
     <div class="col-xs-4">
       <h3><span class="text-font" style="color: #2EE59D;">Mark!</span></h3>
-      <p>観たことのある映画は Mark! しましょう。</p>
-      <div class="wrap2">
+      <div class="top wrap2">
         <div class="button">
           <span class="fontop glyphicon glyphicon-tag" aria-hidden="true"></span>
         </div>
       </div>
+      <p class="top">観たことのある映画は Mark! しましょう。</p>
     </div>
     <div class="col-xs-4">
       <h3><span class="text-font" style="color: #2EE59D;">Like!</span></h3>
-      <p>心に残る大切な映画は Like! で登録!</p>
-      <div class="wrap2">
+      <div class="top wrap2">
         <div class="button">
           <span class="fontop glyphicon glyphicon-heart" aria-hidden="true"></span>
         </div>
       </div>
+      <p class="top">心に残る大切な映画は Like! で登録!</p>
     </div>
   </div>
 
@@ -160,7 +163,8 @@
   <div class="col-xs-1"></div>
 
   <div class="col-xs-10 text-center">
-    <h1 class="text-font">Comment / Score</h1>
+    <h1 class="text-font">Comment</h1>
+    <h1 class="text-font">Score</h1>
     <br>
     <p>鑑賞した映画の感想をコメントとして投稿しましょう!</p>
     <br>
@@ -168,38 +172,38 @@
       コメントは <span class="text-font" style="color: #2EE59D;">1つの映画につき、1ユーザー1つまで</span> となっており、500文字までとなります。
     </p>
     <br>
-    <p>また、編集や削除をすることもできますので、観るたびに感想が変化する様子をお楽しみください。</p>
+    <p>また、編集や削除をすることもできますので、<span class="text-font" style="color: #2EE59D;">観るたびに感想が変化する感覚</span>をお楽しみください。</p>
     <br>
 
     <div>
        <!-- hidden_field_tag 'comment_array', @new_movie_comments.first(3).pluck(:id) %> -->
       <% @new_movie_comments.first(3).each do |new_movie_comment| %>
-        <div class="col-xs-4 movies_list text-center">
+        <div class="col-xs-12 movies_list text-center">
           <div>
-            <h3 class="text-font">User: <%= new_movie_comment.user.nickname %></h3>
+            <h3 class="text-font"><%= new_movie_comment.user.nickname %></h3>
           </div>
           <div>
-            <h3 class="text-font">Comment: <%= new_movie_comment.comment %></h3>
+            <p class="text-font"><%= new_movie_comment.rate %><strong class="mini-font"> / 5.0</strong></p>
           </div>
           <div>
-            <!-- <div id="rateYo-<%= new_movie_comment.id %>"  data-star="<%= new_movie_comment.rate %>" class="margin-center"></div> -->
-            <h3 class="text-font"><%= new_movie_comment.rate %><strong class="mini-font"> / 5.0</strong>
+            <p class="text-font table-data"><%= new_movie_comment.comment %></p>
           </div>
-          <br>
         </div>
       <% end %>
     </div>
-    <p>※最新コメントより、3つをピックアップしております。※</p>
   </div>
 
   <div class="col-xs-1"></div>
 </div>
 
+<p class="text-center">※最新コメントより、3つをピックアップしております。※</p>
+
 <div class="row top">
   <div class="col-xs-1"></div>
 
   <div class="col-xs-10 text-center">
-    <h1 class="text-font">Follow / Follower</h1>
+    <h1 class="text-font">Follow</h1>
+    <h1 class="text-font">Follower</h1>
     <br>
     <p>当サイト『CR』では、<span class="text-font" style="color: #2EE59D;">ご利用いただいている様々な会員様をフォロー</span>することができます。</p>
     <br>
@@ -215,7 +219,8 @@
   <div class="col-xs-1"></div>
 
   <div class="col-xs-10 text-center">
-    <h1 class="text-font">Let's Sign up!</h1>
+    <h1 class="text-font">Let's</h1>
+    <h1 class="text-font">Sign up!</h1>
     <div class="wrap2">
       <%= link_to new_user_registration_path do %>
         <div class="button">
@@ -232,7 +237,7 @@
 <div class="row top">
   <div class="col-xs-2"></div>
 
-  <div class="col-xs-8 well input-color">
+  <div class="col-xs-8 well">
     <h1 class="text-font text-center">About</h1>
     <p class="text-font">
       本ウェブサイトは、就職活動用に企画/開発した作品です。

@@ -1,0 +1,36 @@
+<% mymovie_comment.first(1).each do |mymovie_comment| %>
+  <h3 class="text-center">My Comment</h3>
+  <div class="well col-xs-12">
+    <div class="col-xs-6 text-center">
+      <%= attachment_image_tag mymovie_comment.user ,:profile_image, :fill, 50, 50, format: 'png', fallback: "no_image.jpg", size:'50x50' %>
+      <%= mymovie_comment.user.nickname %>
+    </div>
+    <div class="col-xs-6 text-center">
+      <%= mymovie_comment.created_at.strftime('%Y/%m/%d') %>
+      <br>
+      <span class="comment_status_main"><%= mymovie_comment.rate %></span> / 5
+      <br>
+      <% if mymovie_comment.spoiler_status != "no" %>
+        <span class="comment_status_main" style="color: red;"><%= mymovie_comment.spoiler_status %></span>
+      <% else %>
+        <span class="comment_status_main" style="color: blue;"><%= mymovie_comment.spoiler_status %></span>
+      <% end %>
+      <span class="comment_status_sub">：ネタバレ
+    </div>
+
+    <div class="col-xs-12 text-center">
+      コメント内容
+      <br>
+      <div class="table-data">
+        <%= mymovie_comment.comment %>
+      </div>
+    </div>
+    <div class="col-xs-12 text-center bottom">
+      <% if mymovie_comment.user_id == current_user.id %>
+        <br>
+        <%= link_to " edit ", edit_movie_comment_path(mymovie_comment.id), class: "btn btn-primary comment_edit" %>
+        <%= link_to "delete", movie_comment_path(mymovie_comment.id), method: :delete, class: "btn btn-danger comment_delete", remote: true %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
