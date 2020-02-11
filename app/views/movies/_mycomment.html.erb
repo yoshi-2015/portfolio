@@ -1,3 +1,9 @@
+<% if flash[:notice] %>
+  <div class="flash text-center">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
 <% mymovie_comment.first(1).each do |mymovie_comment| %>
   <h3 class="text-center">My Comment</h3>
   <div class="well col-xs-12">
@@ -29,7 +35,7 @@
       <% if mymovie_comment.user_id == current_user.id %>
         <br>
         <%= link_to " edit ", edit_movie_comment_path(mymovie_comment.id), class: "btn btn-primary comment_edit" %>
-        <%= link_to "delete", movie_comment_path(mymovie_comment.id), method: :delete, class: "btn btn-danger comment_delete", remote: true %>
+        <%= link_to "delete", movie_comment_path(mymovie_comment.id), method: :delete, class: "btn btn-danger comment_delete", remote: true, data: {confirm: "本当に削除しますか？"} %>
       <% end %>
     </div>
   </div>
