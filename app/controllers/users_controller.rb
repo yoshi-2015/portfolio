@@ -8,7 +8,8 @@ class UsersController < ApplicationController
 
   def show
     # chek list
-    @user_checks = Check.where(user_id: @user.id)
+    user_checks = Check.where(user_id: @user.id)
+    @user_checks = user_checks.all.order(created_at: :desc)
     check_ary = [@check_movie_info]
     @check_movies_info = check_ary.compact
 
@@ -19,7 +20,8 @@ class UsersController < ApplicationController
     end
 
     # mark list
-    @user_marks = Mark.where(user_id: @user.id)
+    user_marks = Mark.where(user_id: @user.id)
+    @user_marks = user_marks.all.order(created_at: :desc)
     mark_ary = [@mark_movie_info]
     @mark_movies_info = mark_ary.compact
 
@@ -30,7 +32,8 @@ class UsersController < ApplicationController
     end
 
     # like list
-    @user_likes = Like.where(user_id: @user.id)
+    user_likes = Like.where(user_id: @user.id)
+    @user_likes = user_likes.all.order(created_at: :asc)
     like_ary = [@like_movie_info]
     @like_movies_info = like_ary.compact
 
@@ -41,7 +44,8 @@ class UsersController < ApplicationController
     end
 
     # comment list
-    @user_comments = MovieComment.where(user_id: @user.id)
+    user_comments = MovieComment.where(user_id: @user.id)
+    @user_comments = user_comments.all.order(rate: :desc)
     comment_ary = [@comment_movie_info]
     @comment_movies_info = comment_ary.compact
 

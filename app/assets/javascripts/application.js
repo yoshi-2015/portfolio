@@ -17,7 +17,22 @@
 //= require jquery.rateyo.min
 //= require_tree .
 
-// movie_indexに関して
+// roadに関して
+$(function() {
+var $delayTime = 1000;
+
+$(window).on('load', function(){
+  var $loadingAnim = $('#loadingAnim'),
+      $body = $('body');
+
+    setTimeout( function(){
+
+      $body.addClass('loaded');
+
+      $loadingAnim.find('.loadingAnim_line').on('transitionend', function( e ){
+        $(this).parent().remove(); }); }, $delayTime );
+ });
+});
 
 
 // headerについて
@@ -78,19 +93,6 @@ $(document).ready(function () {
   });
 });
 
-// マイページのたぶ
-$(function() {
-  $('#tab-contents .tab[id != "tab1"]').hide();
-
-  $('#tab-menu a').on('click', function() {
-    $("#tab-contents .tab").hide();
-    $("#tab-menu .active").removeClass("active");
-    $(this).addClass("active");
-    $($(this).attr("href")).show();
-    return false;
-  });
-});
-
 // コメント時のフォントカウント
 $(function() {
     //入力時のイベント
@@ -113,8 +115,8 @@ $(function() {
     //リロード時に初期文字列が入っていた時の対策
     $('.sample').trigger('input');
 
-    //ボタンクリック時　実運用時はsubmit送信などを行うと思います
-    $('.sample_btn').click(function(){
-        alert('コメントは1人1つまで！');
-    });
+    // //ボタンクリック時　実運用時はsubmit送信などを行うと思います
+    // $('.sample_btn').click(function(){
+    //     alert('コメントは1人1つまで！');
+    // });
 });

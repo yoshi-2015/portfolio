@@ -1,3 +1,7 @@
+<div id="loadingAnim" class="loadingAnim">
+  <i class="loadingAnim_line"></i>
+</div>
+
 <div class="row top">
   <h2 class="text-center">User My Page</h2>
 </div>
@@ -41,6 +45,7 @@
 
       <div id="tab-contents" class="clearfix">
         <div id="tab1" class="tab">
+          <h4 class="text-center">『ご登録された昇順』に、左から表示されます。</h4>
           <% @check_movies_info.each do |check_movie| %>
             <div class="clearfix movies_list text-center">
               <div>
@@ -53,6 +58,7 @@
         </div>
 
         <div id="tab2" class="tab">
+          <h4 class="text-center">『ご登録された昇順』に、左から表示されます。</h4>
           <% @mark_movies_info.each do |mark_movie| %>
             <div class="clearfix movies_list text-center">
               <div>
@@ -65,6 +71,7 @@
         </div>
 
         <div id="tab3" class="tab">
+          <h4 class="text-center">『ご登録された降順』に、左から表示されます。</h4>
           <% @like_movies_info.each do |like_movie| %>
             <div class="clearfix movies_list text-center">
               <div>
@@ -77,11 +84,12 @@
         </div>
 
         <div id="tab4" class="tab">
-          <% @comment_movies_info.each do |like_movie| %>
+          <h4 class="text-center">『ご自身で登録された映画Score順』に、左から表示されます。</h4>
+          <% @comment_movies_info.each do |comment_movie| %>
             <div class="clearfix movies_list text-center">
               <div>
-                <%= link_to movie_path(like_movie["id"]) do %>
-                  <%= image_tag("https://image.tmdb.org/t/p/w154/#{like_movie['poster_path']}", :alt => 'poster') %>
+                <%= link_to movie_path(comment_movie["id"]) do %>
+                  <%= image_tag("https://image.tmdb.org/t/p/w154/#{comment_movie['poster_path']}", :alt => 'poster') %>
                 <% end %>
               </div>
             </div>
