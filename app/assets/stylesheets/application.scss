@@ -66,12 +66,12 @@
 
 .loadingAnim:before{
   top: 0;
-  background: linear-gradient(#000, #333);
+  background: linear-gradient(#333, #000);
 }
 
 .loadingAnim:after{
   bottom: 0;
-  background: linear-gradient(#333, #000);
+  background: linear-gradient(#000, #333);
 }
 
 .loaded .loadingAnim:before{
