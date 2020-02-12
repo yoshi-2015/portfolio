@@ -19,7 +19,7 @@
     <%= form_for(@movie_comment) do |f| %>
 
       <div class="bottom">
-        <div id="rateYo" class="margin-center"></div>
+        <div id="rateYo" class="margin-center" data-rateyo-half-star="true" data-rateyo-spacing="15px"data-rateyo-multi-color="true"></div>
         <%= f.hidden_field :rate, id: "score" %>
       </div>
 
