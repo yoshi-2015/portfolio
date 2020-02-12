@@ -2,9 +2,7 @@
 $(function () {
 
   $("#rateYo").rateYo({
-
     onSet: function (rating, rateYoInstance) {
-
       alert(" スコアを " + rating　+ " 点にしました！ ");
       document.getElementById( "score" ).value = rating ;
     }
