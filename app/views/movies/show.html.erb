@@ -1,13 +1,4 @@
-<% if @movie_info['status_code'] = 34 %>
-  <div class="row top">
-    <h2 class="text-center">Not Find</h2>
-    <div class="error">
-      <h1 class="text-font">Sorry.</h1>
-      <h1 class="top text-font"><%= @movie_info['status_message'] %></h1>
-    </div>
-  </div>
-
-<% else %>
+<% if !@movie_info['id'].nil? %>
   <div class="row top bottom">
     <h2 class="text-center">Movie information</h2>
 
@@ -154,5 +145,15 @@
     </div>
 
     <div class="col-xs-1"></div>
+  </div>
+
+<% else %>
+
+  <div class="row top">
+    <h2 class="text-center">Not Find</h2>
+    <div class="error">
+      <h1 class="text-font">Sorry.</h1>
+      <h1 class="top text-font"><%= @movie_info['status_message'] %></h1>
+    </div>
   </div>
 <% end %>

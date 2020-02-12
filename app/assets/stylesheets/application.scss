@@ -149,6 +149,10 @@
   animation: none;
 }
 
+.loaded .loadingAnim_line:before{
+  content: 'LOADED';
+}
+
 /*.loaded .loadingAnim_line:before{
   content: 'LOADED!';
 }*/
