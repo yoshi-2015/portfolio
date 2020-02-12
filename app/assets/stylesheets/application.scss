@@ -62,15 +62,16 @@
   content: ' ';
   transition: all .5s cubic-bezier(.785, .135, .15, .86) 0s;
   transition-delay: .5s;
-  background-color: #000;
 }
 
 .loadingAnim:before{
   top: 0;
+  background: linear-gradient(#000, #111);
 }
 
 .loadingAnim:after{
   bottom: 0;
+  background: linear-gradient(#111, #000);
 }
 
 .loaded .loadingAnim:before{
@@ -133,7 +134,7 @@
   -webkit-animation: loadingAnim_text 1s ease .1s infinite alternate both;
   animation: loadingAnim_text 1s ease .1s infinite alternate both;
   letter-spacing: .5em;
-  color: #fff;
+  color: #2EE59D;
   will-change: opacity;
 }
 
@@ -148,9 +149,9 @@
   animation: none;
 }
 
-.loaded .loadingAnim_line:before{
-  content: 'LOADED';
-}
+/*.loaded .loadingAnim_line:before{
+  content: 'LOADED!';
+}*/
 /*ここまで*/
 
 /*共通レイアウトここから*/
@@ -468,6 +469,12 @@ a {
 }
 /*　コメント　ステータスレイアウト　ここまで　*/
 
+/*movie/show error ここから*/
+.error {
+  margin: 100px auto;
+  text-align: center;
+}
+
 /*　movie show ラジオボタンレイアウト　ここから　*/
 html {
   box-sizing: border-box;
@@ -507,7 +514,7 @@ html {
   width: 7em;
   height: 4em;
   overflow: hidden;
-  border-bottom: 0.5em solid #000;
+  border-bottom: 0.5em solid #fff;
 }
 
 .rocker-small {
@@ -523,7 +530,7 @@ html {
   right: 0;
   bottom: 0;
   background-color: #999;
-  border: 0.5em solid #000;
+  border: 0.5em solid #fff;
   border-bottom: 0;
 }
 
