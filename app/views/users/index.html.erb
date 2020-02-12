@@ -1,5 +1,10 @@
 <div class="row top">
   <h2 class="text-center">All users</h2>
+  <% if flash[:notice] %>
+    <div class="flash text-center">
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
 </div>
 
 <%= render 'users/info', user: current_user %>

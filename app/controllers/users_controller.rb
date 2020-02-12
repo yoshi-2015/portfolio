@@ -89,7 +89,14 @@ class UsersController < ApplicationController
   private
   # ユーザーを探す定義
   def set_user
-    @user = User.find(params[:id])
+    @user = User.find_by(id: params[:id])
+    if !@user.nil?
+      @user = User.find(params[:id])
+    else
+      @users = User.all
+      flash[:notice] = "お探しの会員様は見つかりませんでした。"
+      redirect_to users_path
+    end
   end
 
   def user_params
