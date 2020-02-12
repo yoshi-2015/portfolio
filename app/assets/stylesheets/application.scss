@@ -66,12 +66,12 @@
 
 .loadingAnim:before{
   top: 0;
-  background: linear-gradient(#000, #111);
+  background: linear-gradient(#000, #333);
 }
 
 .loadingAnim:after{
   bottom: 0;
-  background: linear-gradient(#111, #000);
+  background: linear-gradient(#333, #000);
 }
 
 .loaded .loadingAnim:before{
@@ -260,7 +260,7 @@ a {
   position: fixed;
   right: 200px;
   top: 20px;
-  z-index: 100;
+  z-index: 1000;
 }
 
 .menu-trigger,
@@ -327,7 +327,7 @@ a {
   color: #fff;
   width: 100%;
   display: none;
-  z-index: 100;
+  z-index: 1000;
 }
 
 #sp-menu li{
@@ -777,7 +777,7 @@ footer {
     position: fixed;
     right: 20px;
     top: 20px;
-    z-index: 110;
+    z-index: 1000;
   }
 
   .menu-trigger span {
