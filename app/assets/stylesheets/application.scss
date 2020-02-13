@@ -130,7 +130,7 @@
   font-style: normal;
   line-height: 1;
   display: block;
-  content: 'LOOK';
+  content: ' LOOK ';
   -webkit-animation: loadingAnim_text 1s ease .1s infinite alternate both;
   animation: loadingAnim_text 1s ease .1s infinite alternate both;
   letter-spacing: .5em;
@@ -150,7 +150,7 @@
 }
 
 .loaded .loadingAnim_line:before{
-  content: 'UN LOOK';
+  content: 'UNLOOK';
   color: #2EE59D;
 }
 
