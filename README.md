@@ -1,5 +1,5 @@
 [enter link description here](http://18.178.195.230/)
-
+![DEMO](https://github.com/yoshi-2015/portfolio/blob/master/app/assets/images/DEMO.png)
 
 # Cinematic Records
 
@@ -15,6 +15,7 @@
 # DEMO
 
 [enter link description here](http://18.178.195.230/)
+![DEMO2](https://github.com/yoshi-2015/portfolio/blob/master/app/assets/images/DEMO2.png)
 
 
 # Features
