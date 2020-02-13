@@ -3,7 +3,7 @@ class MoviesController < ApplicationController
   def top
     @new_movie_info = Movie.newdetails(params[:id])["results"]
     all_movie_comments = MovieComment.all.order(created_at: :desc)
-    @new_movie_comments = MovieComment.where.not(spoiler_status: '1')
+    @new_movie_comments = all_movie_comments.where.not(spoiler_status: '1')
   end
 
   def index
