@@ -1,6 +1,5 @@
+![DEMO](https://github.com/yoshi-2015/portfolio/blob/master/app/assets/images/logo.png)  
 [enter link description here](http://18.178.195.230/)
-![DEMO](https://github.com/yoshi-2015/portfolio/blob/master/app/assets/images/DEMO.png)
-
 # Cinematic Records
 
 > **Welcome to Cinematic Records !** 
