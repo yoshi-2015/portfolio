@@ -10,7 +10,7 @@ class MovieCommentsController < ApplicationController
 
     # コメントを1人1つまでに制限
     if @movie_newcomment = movie_comments.where(user_id: current_user.id).exists?
-      flash[:notice] = "コメントは1人1つまでの為、編集/削除しましょう！"
+      flash.now[:notice] = "コメントは1人1つまでの為、編集/削除しましょう！"
     else
       @movie_newcomment = current_user.movie_comments.new(movie_comment_params)
       if @movie_newcomment.save
