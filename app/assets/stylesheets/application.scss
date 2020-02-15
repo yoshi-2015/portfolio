@@ -33,6 +33,10 @@
   display: block;
 }
 
+.tmdb_logo {
+  background-image: image-url("TMDb.png");
+}
+
 /*　共通レイアウト　ここから　*/
 .loadingAnim{
   position: fixed;
