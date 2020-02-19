@@ -37,7 +37,7 @@
   background-image: image-url("TMDb.png");
 }
 
-/*　共通レイアウト　ここから　*/
+/*ロード画面ここから*/
 .loadingAnim{
   position: fixed;
   z-index: 1000;
@@ -134,7 +134,7 @@
   font-style: normal;
   line-height: 1;
   display: block;
-  content: ' LOOK ';
+  content: ' LOCK ';
   -webkit-animation: loadingAnim_text 1s ease .1s infinite alternate both;
   animation: loadingAnim_text 1s ease .1s infinite alternate both;
   letter-spacing: .5em;
@@ -154,7 +154,7 @@
 }
 
 .loaded .loadingAnim_line:before{
-  content: 'UNLOOK';
+  content: 'UNLOCK';
   color: #2EE59D;
 }
 
@@ -253,15 +253,15 @@ a {
   font-size: 15px;
 }
 
-/*　テーブル枠線　レイアウト　ここまで　*/
+/*ここまで*/
 
-/*　user-image　レイアウト　ここから　*/
+/*user-imageレイアウトここから*/
 .profile_image {
   border-radius: 50%;
 }
-/*　user-image　レイアウト　ここまで　*/
+/*ここまで*/
 
-/*　ハンバーガーメニュー　レイアウト　ここから　*/
+/*ハンバーガーメニューレイアウトここから*/
 #hm-icon{
   position: fixed;
   right: 200px;
@@ -304,9 +304,9 @@ a {
 .menu-trigger span:nth-of-type(3) {
   bottom: 0;
 }
-/*　ハンバーガーメニュー　レイアウト　ここまで　*/
+/*ここまで*/
 
-/*　ハンバーガーメニュー　アクション　ここから　*/
+/*ハンバーガーメニューアクションここから*/
 .menu-trigger.active {
   -webkit-transform: rotate(360deg);
   transform: rotate(360deg);
@@ -322,9 +322,9 @@ a {
 .menu-trigger.active span:nth-of-type(3) {
   opacity: 0;
 }
-/*　ハンバーガーメニュー　アクション　ここまで　*/
+/*ここまで*/
 
-/* ハンバーガーメニュー内一覧　ここから */
+/*ハンバーガーメニュー内一覧ここから*/
 #sp-menu {
   position: fixed;
   top: 0;
@@ -348,9 +348,9 @@ a {
   text-decoration: none;
   font-weight: bold;
 }
-/* ハンバーガーメニュー内一覧　ここまで */
+/*ここまで*/
 
-/*　mypageタブ　ここから　*/
+/*mypageタブここから*/
 .wrap{
   width: 90%;
   max-width: 800px;
@@ -387,10 +387,9 @@ a {
 #tab-contents p{
   color:#000;
 }
-/*　mypageタブ　ここまで　*/
+/*ここまで*/
 
-/*　ボタン　レイアウト　ここから　*/
-/*　押して欲しいボタンレイアウト　*/
+/*押して欲しいボタンレイアウト*/
 .anime {
   width: 150px;
   text-align:  center;
@@ -406,7 +405,7 @@ a {
   opacity:  0.8;
 }
 
-/*　あまり押さないで欲しいボタンレイアウト　*/
+/*あまり押さないで欲しいボタンレイアウト*/
 .anime_2 {
   width: 150px;
   text-align:  center;
@@ -422,7 +421,7 @@ a {
   opacity:  0.8;
 }
 
-/*　movie検索用ボタンレイアウト　*/
+/*movie検索用ボタンレイアウト*/
 .anime_3 {
   margin-bottom: 5px;
   width: 150px;
@@ -439,8 +438,8 @@ a {
   opacity:  0.9;
 }
 
-/*　movieコメント用ボタンレイアウト　*/
-/*　コメントボタン　ここから　*/
+/*movieコメントレイアウト*/
+/*コメントボタン*/
 .cnt_area.cnt_danger{
   color: #FF0000;
 }
@@ -467,9 +466,9 @@ a {
 .comment_delete {
   color: #FF6600;
 }
-/*　コメントボタン　ここまで　*/
+/*ここまで　*/
 
-/*　コメント　ステータスレイアウト　ここから　*/
+/*コメントステータスレイアウトここから*/
 .comment_status_main {
   font-size: 20px;
 }
@@ -477,15 +476,15 @@ a {
 .comment_status_sub {
   font-size: 10px;
 }
-/*　コメント　ステータスレイアウト　ここまで　*/
 
-/*movie/show error ここから*/
+/*movie/showのerrorここから*/
 .error {
   margin: 100px auto;
   text-align: center;
 }
+/*ここまで*/
 
-/*　movie show ラジオボタンレイアウト　ここから　*/
+/*movie/show/ラジオボタンレイアウトここから*/
 html {
   box-sizing: border-box;
   font-family: 'Arial', sans-serif;
@@ -502,9 +501,9 @@ html {
   justify-content: center;
   padding-top:1em;
 }
+/*ここまで*/
 
-
-/* Switch starts here */
+/*ネタバレスイッチここから*/
 .rocker {
   display: inline-block;
   position: relative;
@@ -644,14 +643,15 @@ input:focus + .switch-left + .switch-right {
 input:checked:focus + .switch-left + .switch-right {
   color: #333;
 }
-/*　movie show ラジオボタンレイアウト　ここまで　*/
+/*ここまで*/
 
-/*　movie index　の配列レイアウト　*/
+/*movie/indexの配列レイアウト*/
 .movies_list {
   display: inline-block;
 }
+/*ここまで*/
 
-/*　Check/Merk/Like機能ボタンレイアウト　ここから　*/
+/*Check/Merk/Like機能ボタンレイアウトここから*/
 
 .wrap2 {
   height: 100%;
@@ -715,10 +715,9 @@ input:checked:focus + .switch-left + .switch-right {
   top: 10px;
  }
 
-/*　Check機能ボタンレイアウト　ここまで　*/
-/*　ボタン　レイアウト　ここまで　*/
+/*ここまで*/
 
-/*　トップに戻るボタン　ここから　*/
+/*トップに戻るボタンここから*/
 #back {
   position: fixed;
   right: 200px;
@@ -728,19 +727,19 @@ input:checked:focus + .switch-left + .switch-right {
 #back img {
   width: 50px;
 }
-/*　トップに戻るボタン　ここまで　*/
+/*ここまで*/
 
-/*　footer　レイアウト　ここから　*/
+/*footerレイアウトここから*/
 footer {
   margin: 100px auto;
   text-align: center;
 }
-/*　footer　レイアウト　ここまで */
+/*ここまで*/
 
 
+/*---------------------------------------------------*/
 
-
-/*　レスポンシブ対応　ここから　*/
+/*レスポンシブ対応ここから*/
 @media screen and (max-width:992px) {
   body {
   /*背景レイアウト*/
@@ -820,7 +819,7 @@ footer {
     opacity:  0.8;
   }
 
-  /*　あまり押さないで欲しいボタンレイアウト　*/
+  /*あまり押さないで欲しいボタンレイアウト*/
   .anime_2 {
     width: 110px;
     text-align:  center;
@@ -837,7 +836,7 @@ footer {
   }
 
 
-  /*　movieコメント用ボタンレイアウト　*/
+  /*movieコメント用ボタンレイアウト*/
   .anime_4 {
     width: 200px;
     text-align:  center;
@@ -853,7 +852,7 @@ footer {
     opacity:  0.9;
   }
 
-  /*　Check/Merk/Like機能ボタンレイアウト　ここから　*/
+  /*Check/Merk/Like機能ボタンレイアウトここから*/
 
   .wrap2 {
     height: 100%;
@@ -914,9 +913,10 @@ footer {
   }
 
 }
-/*　レスポンシブ対応　ここまで　*/
+/*ここまで*/
 
 
+/*---------------------------------------------------*/
 
 
 
