@@ -76,7 +76,7 @@ gem 'bootstrap-sass', '~> 3.4.1'
 gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
 # httparty(API：自動的にJSON・XMLを解析しRuby hashesに変換)
-gem 'httparty', '0.13.5'
+gem 'httparty', '0.21.0'
 
 # deploy
 group :production do
